@@ -1,3 +1,27 @@
 {
-
+  "title": "Florian's Adventure",
+  "storyNodes": [
+    {
+      "id": 1,
+      "nodeText": "Test Node 1",
+      "choices": [
+        {
+          "choiceText": "Test 1",
+          "requiredItem": null,
+          "targetNodeId": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nodeText": "Test Node 2",
+      "choices": [
+        {
+          "choiceText": "Test 2",
+          "requiredItem": null,
+          "targetNodeId": 1
+        }
+      ]
+    }
+  ]
 }

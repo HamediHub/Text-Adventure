@@ -8,6 +8,7 @@ namespace CreateYourOwnAdventure.model
 {
     internal class StoryNode
     {
+        int id;
         string nodeText;
         List<Choice> choices;
     }

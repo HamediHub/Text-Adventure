@@ -10,5 +10,6 @@ namespace CreateYourOwnAdventure.model
     {
         string choiceText;
         Item requiredItem;
+        int targetNodeId;
     }
 }

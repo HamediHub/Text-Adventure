@@ -17,6 +17,9 @@ namespace CreateYourOwnAdventure.controller
 
 
             Console.WriteLine(selectedPlayer.Name);
+
+            Console.WriteLine(selectedPlayer.Story.Title);
+
             Console.ReadKey();
 
         }
