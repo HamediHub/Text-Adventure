@@ -15,6 +15,8 @@ namespace CreateYourOwnAdventure.model
         public Player(string name)
         {
             this.name = name;
+            this.inventory = new List<Item>();
+            this.story = new Story();
         }
 
         public string Name
@@ -38,6 +40,18 @@ namespace CreateYourOwnAdventure.model
             set
             {
                 inventory = value;
+            }
+        }
+
+        public Story Story
+        {
+            get
+            {
+                return story;
+            }
+            set
+            {
+                story = value;
             }
         }
     }

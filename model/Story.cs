@@ -10,5 +10,12 @@ namespace CreateYourOwnAdventure.model
     {
         string title;
         List<StoryNode> storyNodes;
+
+        public Story()
+        {
+            
+        }
+
     }
+
 }

@@ -23,7 +23,11 @@ namespace CreateYourOwnAdventure.service
         {
             Console.WriteLine("Erstellen Sie einen neuen Spieler.");
             Console.WriteLine("Name:");
-            return new Player(Console.ReadLine());
+
+            Player newPlayer = new Player(Console.ReadLine());
+            SavePlayer(newPlayer);
+
+            return newPlayer;
         }
 
         public Player SelectPlayer()
@@ -34,7 +38,13 @@ namespace CreateYourOwnAdventure.service
 
         public void SavePlayer(Player player)
         {
-            
+            List<Player> players = GetPlayers();
+            players.Add(player);
+
+            String json = JsonConvert.SerializeObject(players);
+
+            String jsonPath = @"..\..\data\players.json";
+            File.WriteAllText(jsonPath, json);
         }
 
     }

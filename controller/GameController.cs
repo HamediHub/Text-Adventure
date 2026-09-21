@@ -42,9 +42,12 @@ namespace CreateYourOwnAdventure.controller
                 {
                     choice = Int32.Parse(Console.ReadLine());
 
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Ihre Eingabe liegt außerhalb des erlaubten Bereichs!");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    if (choice < 1 || choice > 2)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Ihre Eingabe liegt außerhalb des erlaubten Bereichs!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
                 }
                 catch (Exception e)
                 {
