@@ -8,8 +8,44 @@ namespace CreateYourOwnAdventure.model
 {
     internal class StoryNode
     {
-        int id;
-        string nodeText;
-        List<Choice> choices;
+        private int id;
+        private string nodeText;
+        private List<Choice> choices;
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string NodeText
+        {
+            get
+            {
+                return nodeText;
+            }
+            set
+            {
+                nodeText = value;
+            }
+        }
+
+        public List<Choice> Choices
+        {
+            get
+            {
+                return choices;
+            }
+            set
+            {
+                choices = value;
+            }
+        }
     }
 }

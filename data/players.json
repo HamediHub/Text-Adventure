@@ -1,1 +1,1 @@
-[{"Name":"Florian","Inventory":null,"Story":{"Title":null}},{"Name":"Test","Inventory":null,"Story":{"Title":null}},{"Name":"Florian","Inventory":[],"Story":{"Title":null}},{"Name":"Test","Inventory":[],"Story":{"Title":null}}]
+[{"Name":"Florian","Inventory":[],"Story":{"Title":"Florian's Adventure","StoryNodes":[{"Id":0,"NodeText":"Test Node 1","Choices":[{"ChoiceText":"Test 1","RequiredItem":null,"TargetNodeId":1}]},{"Id":1,"NodeText":"Test Node 2","Choices":[{"ChoiceText":"Test 2","RequiredItem":null,"TargetNodeId":0}]}]},"CurrentNode":0}]

@@ -8,8 +8,57 @@ namespace CreateYourOwnAdventure.model
 {
     internal class Choice
     {
-        string choiceText;
-        Item requiredItem;
-        int targetNodeId;
+        private string choiceText;
+        private Item requiredItem;
+        private int targetNodeId;
+        private Item rewardItem;
+
+        public string ChoiceText
+        {
+            get
+            {
+                return choiceText;
+            }
+            set
+            {
+                choiceText = value;
+            }
+        }
+
+        public Item RequiredItem
+        {
+            get
+            {
+                return requiredItem;
+            }
+            set
+            {
+                requiredItem = value;
+            }
+        }
+
+        public int TargetNodeId
+        {
+            get
+            {
+                return targetNodeId;
+            }
+            set
+            {
+                targetNodeId = value;
+            }
+        }
+
+        public Item RewardItem
+        {
+            get
+            {
+                return rewardItem;
+            }
+            set
+            {
+                rewardItem = value;
+            }
+        }
     }
 }
