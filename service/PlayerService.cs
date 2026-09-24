@@ -25,6 +25,9 @@ namespace CreateYourOwnAdventure.service
             Console.WriteLine("Name:");
 
             Player newPlayer = new Player(Console.ReadLine());
+
+            Console.WriteLine("Spieler '" + newPlayer.Name + "' wurde erfolgreich erstellt.");
+
             SavePlayer(newPlayer);
 
             return newPlayer;
@@ -48,13 +51,20 @@ namespace CreateYourOwnAdventure.service
 
         public void SavePlayer(Player player)
         {
+
             List<Player> players = GetPlayers();
+            if (players == null)
+            {
+                players = new List<Player>();
+            }
             players.Add(player);
 
             String json = JsonConvert.SerializeObject(players);
 
             String jsonPath = @"..\..\data\players.json";
             File.WriteAllText(jsonPath, json);
+
+            Console.WriteLine("'" + player.Name + "' wurde erfolgreich gespeichert.");
         }
 
     }

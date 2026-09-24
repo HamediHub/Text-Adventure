@@ -2,6 +2,7 @@
 using CreateYourOwnAdventure.model;
 using CreateYourOwnAdventure.service;
 using System;
+using System.Collections.Generic;
 
 namespace CreateYourOwnAdventure.controller
 {
@@ -14,9 +15,7 @@ namespace CreateYourOwnAdventure.controller
         {
             Player selectedPlayer = SelectPlayer();
 
-
-
-            Console.WriteLine(selectedPlayer.Name);
+            Console.WriteLine("Ausgewählter Spieler: '" + selectedPlayer.Name + "'");
 
             Console.WriteLine(selectedPlayer.Story.Title);
 
@@ -31,7 +30,7 @@ namespace CreateYourOwnAdventure.controller
             int choice = 0;
 
             // Falls es noch keine gespeicherten Spieler gibt, muss ein neuer Spieler erstellt werden.
-            if (playerService.GetPlayers() == null)
+            if (playerService.GetPlayers() == null || playerService.GetPlayers().Count == 0)
             {
                 Console.WriteLine("Es gibt noch keine Spieler.");
                 choice = 1;
