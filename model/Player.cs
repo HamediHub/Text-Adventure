@@ -10,6 +10,7 @@ namespace CreateYourOwnAdventure.model
     internal class Player
     {
         private string name;
+        private int id;
         private List<Item> inventory;
         private Story story;
         private int currentNode;
@@ -31,6 +32,18 @@ namespace CreateYourOwnAdventure.model
             set
             {
                 name = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
             }
         }
 
