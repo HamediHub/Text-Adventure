@@ -37,6 +37,13 @@ namespace CreateYourOwnAdventure.helper
             Console.ForegroundColor = oldColor;
             Console.ReadKey();
         }
+        public static void ColorPrintLineNoReadKey(string s, ConsoleColor color)
+        {
+            ConsoleColor oldColor = Console.ForegroundColor;
+            Console.ForegroundColor = color;
+            Console.WriteLine(s);
+            Console.ForegroundColor = oldColor;
+        }
 
         public static void ColorPrint(string s, ConsoleColor color)
         {

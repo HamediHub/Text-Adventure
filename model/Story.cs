@@ -13,6 +13,8 @@ namespace CreateYourOwnAdventure.model
         private string title;
         private List<StoryNode> storyNodes;
 
+        private List<Item> items;
+
         public string Title {
             
             get
@@ -34,6 +36,18 @@ namespace CreateYourOwnAdventure.model
             set
             {
                 storyNodes = value;
+            }
+        }
+
+        public List<Item> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
             }
         }
 

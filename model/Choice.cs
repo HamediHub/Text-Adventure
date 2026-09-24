@@ -9,9 +9,9 @@ namespace CreateYourOwnAdventure.model
     internal class Choice
     {
         private string choiceText;
-        private Item requiredItem;
+        private string requiredItemId;
         private int targetNodeId;
-        private Item rewardItem;
+        private string rewardItemId;
 
         public string ChoiceText
         {
@@ -25,15 +25,15 @@ namespace CreateYourOwnAdventure.model
             }
         }
 
-        public Item RequiredItem
+        public string RequiredItemId
         {
             get
             {
-                return requiredItem;
+                return requiredItemId;
             }
             set
             {
-                requiredItem = value;
+                requiredItemId = value;
             }
         }
 
@@ -49,15 +49,15 @@ namespace CreateYourOwnAdventure.model
             }
         }
 
-        public Item RewardItem
+        public string RewardItemId
         {
             get
             {
-                return rewardItem;
+                return rewardItemId;
             }
             set
             {
-                rewardItem = value;
+                rewardItemId = value;
             }
         }
     }

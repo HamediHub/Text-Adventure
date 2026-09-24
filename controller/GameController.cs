@@ -15,24 +15,33 @@ namespace CreateYourOwnAdventure.controller
 
         public void StartGame()
         {
-            Player selectedPlayer = SelectPlayer();
+            Player selectedPlayer = StartMenu();
 
-            playerService.SavePlayer(selectedPlayer);
-
-            OutputHelper.PrintLine("Spieler '" + selectedPlayer.Name + "' wurde ausgewählt.");
-
-            Console.WriteLine("Ausgewählter Spieler: '" + selectedPlayer.Name + "'");
-
-            Console.WriteLine(StoryHelper.GetStory().Title);
-
-            storyService.TraverseStory(selectedPlayer);
+            OutputHelper.PrintLine(StoryHelper.GetStory().Title);
 
 
-            Console.ReadKey();
+            while (true)
+            {
+                storyService.TraverseStory(selectedPlayer);
 
+                playerService.SavePlayer(selectedPlayer);
+
+                Console.ReadKey();
+
+                OutputHelper.PrintLineNoReadKey("");
+                OutputHelper.PrintLineNoReadKey("Was möchten Sie tun?");
+                OutputHelper.PrintLineNoReadKey("1: Spiel fortsetzen");
+                OutputHelper.PrintLineNoReadKey("2: Spiel beenden");
+                int choice = InputHelper.GetIntInput(1, 2);
+                if (choice == 2)
+                {
+                    break;
+                }
+            }
+         
         }
 
-        private Player SelectPlayer()
+        private Player StartMenu()
         {
             Player selectedPlayer = null;
 
@@ -41,56 +50,28 @@ namespace CreateYourOwnAdventure.controller
             // Falls es noch keine gespeicherten Spieler gibt, muss ein neuer Spieler erstellt werden.
             if (playerService.GetPlayers() == null || playerService.GetPlayers().Count == 0)
             {
-                Console.WriteLine("Es gibt noch keine Spieler.");
+                OutputHelper.PrintLine("Es gibt noch keine Spieler.");
+
+                // Vorauswahl auf "Neuer Spieler" setzen, da es keine Spieler gibt.
                 choice = 1;
             }
 
-            while (choice < 1 || choice > 2)
+            if (choice != 1)
             {
-                Console.WriteLine("(1) Neuer Spieler");
-                Console.WriteLine("(2) Spielerauswahl");
-                try
-                {
-                    choice = Int32.Parse(Console.ReadLine());
-
-                    if (choice < 1 || choice > 2)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Ihre Eingabe liegt außerhalb des erlaubten Bereichs!");
-                        Console.ForegroundColor = ConsoleColor.White;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Sie müssen eine Zahl eingeben!");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    choice = 0;
-                }
-                
-                
+                OutputHelper.PrintLineNoReadKey("Startmenü");
+                OutputHelper.PrintLineNoReadKey("1: Neuer Spieler");
+                OutputHelper.PrintLineNoReadKey("2: Vorhandener Spieler");
+                choice = InputHelper.GetIntInput(1, 2);
             }
+
 
             switch (choice)
             {
                 case 1:
-                    OutputHelper.PrintLineNoReadKey("Erstellen Sie einen neuen Spieler.");
-                    OutputHelper.PrintLineNoReadKey("Name: ");
-
                     selectedPlayer = playerService.CreateNewPlayer();
-
-                    OutputHelper.Print("Spieler ");
-                    OutputHelper.ColorPrint(selectedPlayer.Name, ConsoleColor.Blue);
-                    OutputHelper.PrintLine(" wurde erfolgreich erstellt.");
-
                     break;
                 case 2:
                     selectedPlayer = playerService.SelectPlayer();
-
-                    OutputHelper.Print("Spieler ");
-                    OutputHelper.ColorPrint(selectedPlayer.Name, ConsoleColor.Blue);
-                    OutputHelper.PrintLine(" wurde erfolgreich ausgewählt.");
-
                     break;
             }
 

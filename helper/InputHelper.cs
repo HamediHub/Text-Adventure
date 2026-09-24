@@ -17,22 +17,36 @@ namespace CreateYourOwnAdventure.helper
 
         public static int GetIntInput(int min, int max)
         {
-            Console.WriteLine("min: " + min);
-            Console.WriteLine("max: " + max);
+            int input;
 
-            int input = min - 1;
-            while (input < min || input > max)
+            do
             {
-                input = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine(input);
-
-                if (input < min || input > max)
+                try
                 {
-                    OutputHelper.ColorPrintLine("Eingabe muss im erlaubten Bereich (" + min + "-" + max + ") liegen!", ConsoleColor.Red);
-                    input = min - 1;
+                    string inputLine;
+
+                    do
+                    {
+                        OutputHelper.Print("Eingabe: ");
+                        inputLine = Console.ReadLine();
+                    } while (inputLine.Length == 0);
+                    
+                    input = Int32.Parse(inputLine.First().ToString());
+
+                    if (input < min || input > max)
+                    {
+                        OutputHelper.ColorPrintLineNoReadKey("Ihre Eingabe liegt außerhalb des erlaubten Bereichs! (" + min + " - " + max + ")", ConsoleColor.Red);
+                    }
                 }
-            }
+                catch (FormatException)
+                {
+                    OutputHelper.ColorPrintLineNoReadKey("Bitte geben Sie eine gültige Zahl ein!", ConsoleColor.Red);
+                    input = min - 1; // Set input to an invalid value to continue the loop
+                }
+
+            } while (input < min || input > max);
+
+            OutputHelper.PrintLineNoReadKey("");
             return input;
         }
 
@@ -46,21 +60,23 @@ namespace CreateYourOwnAdventure.helper
 
                 if (name.Length < 1)
                 {
-                    Console.WriteLine("Name darf nicht leer sein!");
+                    OutputHelper.ColorPrintLineNoReadKey("Name darf nicht leer sein!", ConsoleColor.Red);
                     name = null;
                 }
                 else if (name.Length > 14)
                 {
-                    Console.WriteLine("Name darf nicht länger als 14 Zeichen sein!");
+                    OutputHelper.ColorPrintLineNoReadKey("Name darf nicht länger als 14 Zeichen sein!", ConsoleColor.Red);
                     name = null;
                 }
                 else if (!Regex.IsMatch(name, "^\\w+$"))
                 {
-                    Console.WriteLine("Name darf keine Sonderzeichen enthalten!");
+                    OutputHelper.ColorPrintLineNoReadKey("Name darf keine Sonderzeichen enthalten!", ConsoleColor.Red);
                     name = null;
                 }
 
             }
+
+            OutputHelper.PrintLineNoReadKey("");
 
             return name;
 

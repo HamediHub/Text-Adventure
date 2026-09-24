@@ -17,45 +17,66 @@ namespace CreateYourOwnAdventure.service
 
             // currentNode ermitteln
             StoryNode currentNode = GetCurrentNode(story, player);
-            Console.WriteLine(currentNode.NodeText);
+            OutputHelper.PrintLine(currentNode.NodeText);
 
             // possibleChoices ermitteln
             List<Choice> possibleChoices = GetPossibleChoices(currentNode, player);
 
             // 
+
+            Choice selectedChoice = null;
             if (possibleChoices.Count <= 0)
             {
-                Console.ReadKey();
+                OutputHelper.PrintLine("");
+                return;
             }
             else if (possibleChoices.Count == 1) {
-                Console.WriteLine(possibleChoices[0].ChoiceText);
-                Console.WriteLine("Du hast keine weiteren Optionen.");
-                Console.ReadKey();
+                OutputHelper.PrintLine(possibleChoices[0].ChoiceText);
+                OutputHelper.PrintLine("Du hast keine weiteren Optionen.");
 
-                if (possibleChoices[0].RewardItem != null)
-                {
-                    Console.WriteLine("Du erhältst '" + possibleChoices[0].RewardItem.Name + "'.");
-                    Console.ReadKey();
-                }
+                selectedChoice = possibleChoices[0];
             }
             else
             {
-                int count = 1;
+                int count = 0;
                 foreach (Choice choice in possibleChoices)
                 {
-                    Console.Write(count + ": " + choice.ChoiceText);
+                    count++;
+                    OutputHelper.Print(count + ": " + choice.ChoiceText);
 
-                    if (choice.RequiredItem != null)
+                    if (choice.RequiredItemId != null)
                     {
-                        Console.WriteLine(" (uses " + choice.RequiredItem + ")");
+                        OutputHelper.Print(" (uses " + StoryHelper.GetItem(choice.RequiredItemId).Name + ")");
                     }
 
-                    Console.WriteLine();
+                    OutputHelper.PrintLineNoReadKey("");
                 }
 
+                int input = InputHelper.GetIntInput(1, count);
 
+                selectedChoice = possibleChoices[input - 1];
+
+                
             }
-            
+
+            if (selectedChoice.RewardItemId != null)
+            {
+                OutputHelper.Print("Du erhältst ");
+                OutputHelper.ColorPrint(StoryHelper.GetItem(selectedChoice.RewardItemId).Name, ConsoleColor.DarkGreen);
+                OutputHelper.PrintLine(".");
+                player.Inventory.Add(selectedChoice.RewardItemId);
+            }
+
+            if (selectedChoice.RequiredItemId != null)
+            {
+                OutputHelper.Print("Du verlierst ");
+                OutputHelper.ColorPrint(StoryHelper.GetItem(selectedChoice.RequiredItemId).Name, ConsoleColor.DarkRed);
+                OutputHelper.PrintLine(".");
+                player.Inventory.Remove(selectedChoice.RequiredItemId);
+            }
+
+            player.CurrentNode = selectedChoice.TargetNodeId;
+
 
         }
 
@@ -80,7 +101,7 @@ namespace CreateYourOwnAdventure.service
 
             foreach (Choice choice in storyNode.Choices)
             {
-                if (choice.RequiredItem == null || player.Inventory.Contains(choice.RequiredItem))
+                if (choice.RequiredItemId == null || player.Inventory.Contains(choice.RequiredItemId))
                 {
                     possibleChoices.Add(choice);
                 }

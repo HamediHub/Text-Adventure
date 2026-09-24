@@ -12,8 +12,8 @@ namespace CreateYourOwnAdventure.service
 
         public List<Player> GetPlayers()
         {
-            String jsonPath = @"..\..\data\players.json";
-            String json = File.ReadAllText(jsonPath);
+            string jsonPath = @"..\..\data\players.json";
+            string json = File.ReadAllText(jsonPath);
 
             List<Player> players = JsonConvert.DeserializeObject<List<Player>>(json);
 
@@ -22,16 +22,34 @@ namespace CreateYourOwnAdventure.service
 
         public Player CreateNewPlayer()
         {
+            OutputHelper.PrintLineNoReadKey("Erstellen Sie einen neuen Spieler.");
+            OutputHelper.Print("Name: ");
 
             string playerName = InputHelper.GetNameInput();
-            Player newPlayer = new Player(playerName);
+
+            List<Player> players = GetPlayers();
+
+            int newUniqueId = 1;
+            if (players != null)
+            {
+                while (players.Exists(p => p.Id == newUniqueId))
+                {
+                    newUniqueId++;
+                }
+            }
+            
+            Player newPlayer = new Player(playerName, newUniqueId);
+
+            OutputHelper.ColorPrint(newPlayer.Name, ConsoleColor.Blue);
+            OutputHelper.PrintLineNoReadKey(" wurde erfolgreich erstellt.");
+            OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
 
             return newPlayer;
         }
 
         public Player SelectPlayer()
         {
-            OutputHelper.PrintLine("Wählen Sie einen Spieler");
+            OutputHelper.PrintLineNoReadKey("Wählen Sie einen Spieler");
             List<Player> players = GetPlayers();
 
             int count = 0;
@@ -43,7 +61,13 @@ namespace CreateYourOwnAdventure.service
 
             int input = InputHelper.GetIntInput(1, count);
 
-            return players[input-1];
+            Player selectedPlayer = players[input - 1];
+
+            OutputHelper.ColorPrint(selectedPlayer.Name, ConsoleColor.Blue);
+            OutputHelper.PrintLineNoReadKey(" wurde erfolgreich ausgewählt.");
+            OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
+
+            return selectedPlayer;
         }
 
         public void SavePlayer(Player player)
@@ -54,14 +78,21 @@ namespace CreateYourOwnAdventure.service
             {
                 players = new List<Player>();
             }
+
+            if (players.Exists(p => p.Id == player.Id))
+            {
+                players.RemoveAll(p => p.Id == player.Id);
+            }
             players.Add(player);
 
-            String json = JsonConvert.SerializeObject(players);
+            string json = JsonConvert.SerializeObject(players);
 
-            String jsonPath = @"..\..\data\players.json";
+            string jsonPath = @"..\..\data\players.json";
             File.WriteAllText(jsonPath, json);
 
-            Console.WriteLine("'" + player.Name + "' wurde erfolgreich gespeichert.");
+            OutputHelper.ColorPrint(player.Name, ConsoleColor.Blue);
+            OutputHelper.PrintLineNoReadKey(" wurde erfolgreich gespeichert.");
+            OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
         }
 
     }

@@ -7,19 +7,21 @@
       "choices": [
         {
           "choiceText": "Choice 1",
-          "requiredItem": null,
+          "requiredItemId": null,
           "targetNodeId": 1,
-          "rewardItem": null
+          "rewardItemId": null
         },
         {
-          "choiceText": "Choice 2",
-          "requiredItem": {
-            "name": "TestItem",
-            "description": "Beschreibung",
-            "id": 1
-          },
+          "choiceText": "Choice 2 (mit requiredItemId)",
+          "requiredItemId": "TestItem",
           "targetNodeId": 1,
-          "rewardItem": null
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Choice 3 (mit rewardItemId)",
+          "requiredItemId": null,
+          "targetNodeId": 1,
+          "rewardItemId": "TestItem"
         }
       ]
     },
@@ -29,11 +31,18 @@
       "choices": [
         {
           "choiceText": "Test 2",
-          "requiredItem": null,
+          "requiredItemId": null,
           "targetNodeId": 0,
-          "rewardItem": null
+          "rewardItemId": null
         }
       ]
+    }
+  ],
+  "items": [
+    {
+      "name": "Test",
+      "description": "Das ist ein TestItem",
+      "id": "TestItem"
     }
   ]
 }

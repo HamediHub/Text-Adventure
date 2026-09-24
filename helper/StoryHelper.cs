@@ -21,8 +21,8 @@ namespace CreateYourOwnAdventure.helper
 
         private static void initStory()
         {
-            String jsonPath = @"..\..\data\story.json";
-            String json = File.ReadAllText(jsonPath);
+            string jsonPath = @"..\..\data\story.json";
+            string json = File.ReadAllText(jsonPath);
 
             story = JsonConvert.DeserializeObject<Story>(json);
         }
@@ -34,6 +34,15 @@ namespace CreateYourOwnAdventure.helper
                 initStory();
             }
             return story;
+        }
+
+        public static Item GetItem(string itemId)
+        {
+            if (story == null)
+            {
+                initStory();
+            }
+            return story.Items.First(i => i.Id == itemId);
         }
 
     }
