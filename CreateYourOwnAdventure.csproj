@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\GameController.cs" />
+    <Compile Include="helper\StoryHelper.cs" />
     <Compile Include="model\Choice.cs" />
     <Compile Include="model\Item.cs" />
     <Compile Include="model\Player.cs" />

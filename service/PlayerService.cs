@@ -23,18 +23,48 @@ namespace CreateYourOwnAdventure.service
         {
             Console.WriteLine("Erstellen Sie einen neuen Spieler.");
             Console.WriteLine("Name:");
-            return new Player(Console.ReadLine());
+
+            Player newPlayer = new Player(Console.ReadLine());
+
+            Console.WriteLine("Spieler '" + newPlayer.Name + "' wurde erfolgreich erstellt.");
+
+            SavePlayer(newPlayer);
+
+            return newPlayer;
         }
 
         public Player SelectPlayer()
         {
-            // Spielerauswahl implementieren
-            return null;
+            Console.WriteLine("Wählen Sie einen Spieler");
+            List<Player> players = GetPlayers();
+
+            int count = 1;
+            foreach (Player player in players)
+            {
+                Console.WriteLine(count + ": " + player.Name + " (" + player.CurrentNode + ")");
+            }
+
+            int input = Convert.ToInt32(Console.ReadLine());
+
+            return players[input-1];
         }
 
         public void SavePlayer(Player player)
         {
-            
+
+            List<Player> players = GetPlayers();
+            if (players == null)
+            {
+                players = new List<Player>();
+            }
+            players.Add(player);
+
+            String json = JsonConvert.SerializeObject(players);
+
+            String jsonPath = @"..\..\data\players.json";
+            File.WriteAllText(jsonPath, json);
+
+            Console.WriteLine("'" + player.Name + "' wurde erfolgreich gespeichert.");
         }
 
     }

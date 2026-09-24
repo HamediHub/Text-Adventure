@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CreateYourOwnAdventure.helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,14 @@ namespace CreateYourOwnAdventure.model
         private string name;
         private List<Item> inventory;
         private Story story;
+        private int currentNode;
 
         public Player(string name)
         {
             this.name = name;
+            this.inventory = new List<Item>();
+            this.story = StoryHelper.GetNewStory();
+            this.currentNode = 0;
         }
 
         public string Name
@@ -38,6 +43,30 @@ namespace CreateYourOwnAdventure.model
             set
             {
                 inventory = value;
+            }
+        }
+
+        public Story Story
+        {
+            get
+            {
+                return story;
+            }
+            set
+            {
+                story = value;
+            }
+        }
+
+        public int CurrentNode
+        {
+            get
+            {
+                return currentNode;
+            }
+            set
+            {
+                currentNode = value;
             }
         }
     }
