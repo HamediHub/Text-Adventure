@@ -1,4 +1,5 @@
 ﻿
+using CreateYourOwnAdventure.helper;
 using CreateYourOwnAdventure.model;
 using CreateYourOwnAdventure.service;
 using System;
@@ -9,15 +10,23 @@ namespace CreateYourOwnAdventure.controller
     internal class GameController
     {
 
-        PlayerService playerService = new PlayerService();
+        private static PlayerService playerService = new PlayerService();
+        private static StoryService storyService = new StoryService();
 
         public void StartGame()
         {
             Player selectedPlayer = SelectPlayer();
 
+            playerService.SavePlayer(selectedPlayer);
+
+            OutputHelper.PrintLine("Spieler '" + selectedPlayer.Name + "' wurde ausgewählt.");
+
             Console.WriteLine("Ausgewählter Spieler: '" + selectedPlayer.Name + "'");
 
-            Console.WriteLine(selectedPlayer.Story.Title);
+            Console.WriteLine(StoryHelper.GetStory().Title);
+
+            storyService.TraverseStory(selectedPlayer);
+
 
             Console.ReadKey();
 
@@ -65,10 +74,23 @@ namespace CreateYourOwnAdventure.controller
             switch (choice)
             {
                 case 1:
+                    OutputHelper.PrintLineNoReadKey("Erstellen Sie einen neuen Spieler.");
+                    OutputHelper.PrintLineNoReadKey("Name: ");
+
                     selectedPlayer = playerService.CreateNewPlayer();
+
+                    OutputHelper.Print("Spieler ");
+                    OutputHelper.ColorPrint(selectedPlayer.Name, ConsoleColor.Blue);
+                    OutputHelper.PrintLine(" wurde erfolgreich erstellt.");
+
                     break;
                 case 2:
                     selectedPlayer = playerService.SelectPlayer();
+
+                    OutputHelper.Print("Spieler ");
+                    OutputHelper.ColorPrint(selectedPlayer.Name, ConsoleColor.Blue);
+                    OutputHelper.PrintLine(" wurde erfolgreich ausgewählt.");
+
                     break;
             }
 

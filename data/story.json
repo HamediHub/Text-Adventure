@@ -6,8 +6,18 @@
       "nodeText": "Test Node 1",
       "choices": [
         {
-          "choiceText": "Test 1",
+          "choiceText": "Choice 1",
           "requiredItem": null,
+          "targetNodeId": 1,
+          "rewardItem": null
+        },
+        {
+          "choiceText": "Choice 2",
+          "requiredItem": {
+            "name": "TestItem",
+            "description": "Beschreibung",
+            "id": 1
+          },
           "targetNodeId": 1,
           "rewardItem": null
         }

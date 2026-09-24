@@ -12,17 +12,28 @@ namespace CreateYourOwnAdventure.helper
     internal class StoryHelper
     {
 
+        private static Story story;
+
         private StoryHelper()
         {
             throw new NotSupportedException("Cannot instantiate helper class 'StoryHelper'");
         }
 
-        public static Story GetNewStory()
+        private static void initStory()
         {
             String jsonPath = @"..\..\data\story.json";
             String json = File.ReadAllText(jsonPath);
 
-            return JsonConvert.DeserializeObject<Story>(json);
+            story = JsonConvert.DeserializeObject<Story>(json);
+        }
+
+        public static Story GetStory()
+        {
+            if (story == null)
+            {
+                initStory();
+            }
+            return story;
         }
 
     }

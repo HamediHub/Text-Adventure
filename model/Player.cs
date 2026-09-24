@@ -12,14 +12,12 @@ namespace CreateYourOwnAdventure.model
         private string name;
         private int id;
         private List<Item> inventory;
-        private Story story;
         private int currentNode;
 
         public Player(string name)
         {
             this.name = name;
             this.inventory = new List<Item>();
-            this.story = StoryHelper.GetNewStory();
             this.currentNode = 0;
         }
 
@@ -56,18 +54,6 @@ namespace CreateYourOwnAdventure.model
             set
             {
                 inventory = value;
-            }
-        }
-
-        public Story Story
-        {
-            get
-            {
-                return story;
-            }
-            set
-            {
-                story = value;
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using CreateYourOwnAdventure.model;
+﻿using CreateYourOwnAdventure.helper;
+using CreateYourOwnAdventure.model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,30 +22,26 @@ namespace CreateYourOwnAdventure.service
 
         public Player CreateNewPlayer()
         {
-            Console.WriteLine("Erstellen Sie einen neuen Spieler.");
-            Console.WriteLine("Name:");
 
-            Player newPlayer = new Player(Console.ReadLine());
-
-            Console.WriteLine("Spieler '" + newPlayer.Name + "' wurde erfolgreich erstellt.");
-
-            SavePlayer(newPlayer);
+            string playerName = InputHelper.GetNameInput();
+            Player newPlayer = new Player(playerName);
 
             return newPlayer;
         }
 
         public Player SelectPlayer()
         {
-            Console.WriteLine("Wählen Sie einen Spieler");
+            OutputHelper.PrintLine("Wählen Sie einen Spieler");
             List<Player> players = GetPlayers();
 
-            int count = 1;
+            int count = 0;
             foreach (Player player in players)
             {
-                Console.WriteLine(count + ": " + player.Name + " (" + player.CurrentNode + ")");
+                count++;
+                OutputHelper.PrintLineNoReadKey(count + ": " + player.Name + " (" + player.CurrentNode + ")");
             }
 
-            int input = Convert.ToInt32(Console.ReadLine());
+            int input = InputHelper.GetIntInput(1, count);
 
             return players[input-1];
         }

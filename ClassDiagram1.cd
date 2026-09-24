@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CreateYourOwnAdventure.controller.GameController">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAgAAgAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>controller\GameController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="storyService" />
+      <Field Name="playerService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.helper.StoryHelper">
+    <Position X="9" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>helper\StoryHelper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="story" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.model.Choice">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YQAAACAAAAAAAAEAAAAAAAAAAABBAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>model\Choice.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="rewardItem" />
+      <Field Name="requiredItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.model.Item">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAIAAAAAQAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>model\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.model.Player">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAAACQAAAAkAAAgA=</HashCode>
+      <FileName>model\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="inventory" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.model.Story">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAABAAAAAQAAA=</HashCode>
+      <FileName>model\Story.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="storyNodes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.model.StoryNode">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAEAQAABAEAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>model\StoryNode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="choices" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.service.PlayerService">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAgAAAAAAAAAACBAAAAAAAAAAAAA=</HashCode>
+      <FileName>service\PlayerService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CreateYourOwnAdventure.service.StoryService">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAABAAAAAAAAAAAAAAAAAAAAAACAAAAAgA=</HashCode>
+      <FileName>service\StoryService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\GameController.cs" />
+    <Compile Include="helper\InputHelper.cs" />
+    <Compile Include="helper\OutputHelper.cs" />
     <Compile Include="helper\StoryHelper.cs" />
     <Compile Include="model\Choice.cs" />
     <Compile Include="model\Item.cs" />
@@ -56,9 +58,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="service\PlayerService.cs" />
+    <Compile Include="service\StoryService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="data\players.json" />
     <None Include="data\story.json" />
     <None Include="packages.config" />

@@ -8,8 +8,45 @@ namespace CreateYourOwnAdventure.model
 {
     internal class Item
     {
-        string name;
-        string id;
+        private string name;
+        private string description;
+        private string id;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+            }
+        }
+
+        public string Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
 
     }
 }
