@@ -10,7 +10,7 @@ namespace CreateYourOwnAdventure.model
     {
         private string choiceText;
         private string requiredItemId;
-        private int targetNodeId;
+        private string targetNodeId;
         private string rewardItemId;
 
         public string ChoiceText
@@ -37,7 +37,7 @@ namespace CreateYourOwnAdventure.model
             }
         }
 
-        public int TargetNodeId
+        public string TargetNodeId
         {
             get
             {

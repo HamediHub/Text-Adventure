@@ -12,14 +12,14 @@ namespace CreateYourOwnAdventure.model
         private string name;
         private int id;
         private List<string> inventory;
-        private int currentNode;
+        private string currentNode;
 
         public Player(string name, int id)
         {
             this.name = name;
             this.id = id;
             this.inventory = new List<string>();
-            this.currentNode = 0;
+            this.currentNode = "start";
         }
 
         public string Name
@@ -58,7 +58,7 @@ namespace CreateYourOwnAdventure.model
             }
         }
 
-        public int CurrentNode
+        public string CurrentNode
         {
             get
             {

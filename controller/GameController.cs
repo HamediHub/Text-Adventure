@@ -28,12 +28,17 @@ namespace CreateYourOwnAdventure.controller
 
                 Console.ReadKey();
 
-                OutputHelper.PrintLineNoReadKey("");
+                Console.Clear();
                 OutputHelper.PrintLineNoReadKey("Was möchten Sie tun?");
                 OutputHelper.PrintLineNoReadKey("1: Spiel fortsetzen");
-                OutputHelper.PrintLineNoReadKey("2: Spiel beenden");
-                int choice = InputHelper.GetIntInput(1, 2);
+                OutputHelper.PrintLineNoReadKey("2: Inventar anschauen");
+                OutputHelper.PrintLineNoReadKey("3: Spiel beenden");
+                int choice = InputHelper.GetIntInput(1, 3);
                 if (choice == 2)
+                {
+                    storyService.showInventory(selectedPlayer);
+                }
+                if (choice == 3)
                 {
                     break;
                 }

@@ -2,37 +2,37 @@
   "title": "Florian's Adventure",
   "storyNodes": [
     {
-      "id": 0,
+      "nodeId": "start",
       "nodeText": "Test Node 1",
       "choices": [
         {
           "choiceText": "Choice 1",
           "requiredItemId": null,
-          "targetNodeId": 1,
+          "targetNodeId": "weiter",
           "rewardItemId": null
         },
         {
           "choiceText": "Choice 2 (mit requiredItemId)",
           "requiredItemId": "TestItem",
-          "targetNodeId": 1,
+          "targetNodeId": "weiter",
           "rewardItemId": null
         },
         {
           "choiceText": "Choice 3 (mit rewardItemId)",
           "requiredItemId": null,
-          "targetNodeId": 1,
+          "targetNodeId": "weiter",
           "rewardItemId": "TestItem"
         }
       ]
     },
     {
-      "id": 1,
+      "nodeId": "weiter",
       "nodeText": "Test Node 2",
       "choices": [
         {
           "choiceText": "Test 2",
           "requiredItemId": null,
-          "targetNodeId": 0,
+          "targetNodeId": "start",
           "rewardItemId": null
         }
       ]

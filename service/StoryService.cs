@@ -15,6 +15,8 @@ namespace CreateYourOwnAdventure.service
         {
             Story story = StoryHelper.GetStory();
 
+            Console.Clear();
+
             // currentNode ermitteln
             StoryNode currentNode = GetCurrentNode(story, player);
             OutputHelper.PrintLine(currentNode.NodeText);
@@ -27,12 +29,20 @@ namespace CreateYourOwnAdventure.service
             Choice selectedChoice = null;
             if (possibleChoices.Count <= 0)
             {
-                OutputHelper.PrintLine("");
+                OutputHelper.PrintLineNoReadKey("");
+                OutputHelper.PrintLine("Weiter");
                 return;
             }
             else if (possibleChoices.Count == 1) {
-                OutputHelper.PrintLine(possibleChoices[0].ChoiceText);
-                OutputHelper.PrintLine("Du hast keine weiteren Optionen.");
+                OutputHelper.PrintLineNoReadKey("1: " +possibleChoices[0].ChoiceText);
+                OutputHelper.PrintLineNoReadKey("2: Beenden");
+
+                int input = InputHelper.GetIntInput(1, 2);
+
+                if (input == 2)
+                {
+                    return;
+                }
 
                 selectedChoice = possibleChoices[0];
             }
@@ -51,8 +61,14 @@ namespace CreateYourOwnAdventure.service
 
                     OutputHelper.PrintLineNoReadKey("");
                 }
+                OutputHelper.PrintLineNoReadKey(++count + ": Beenden");
 
                 int input = InputHelper.GetIntInput(1, count);
+
+                if (input == count)
+                {
+                    return;
+                }
 
                 selectedChoice = possibleChoices[input - 1];
 
@@ -80,13 +96,61 @@ namespace CreateYourOwnAdventure.service
 
         }
 
-        public StoryNode GetCurrentNode(Story story, Player player)
+        public void showInventory(Player player)
+        {
+            Story story = StoryHelper.GetStory();
+
+            List<Item> playerItems = new List<Item>();
+
+            Console.Clear();
+
+            int count = 0;
+            foreach (string itemId in player.Inventory)
+            {
+                count++;
+                Item item = StoryHelper.GetItem(itemId);
+                playerItems.Add(item);
+                OutputHelper.PrintLineNoReadKey(count + ": " + item.Name);
+            }
+            OutputHelper.PrintLineNoReadKey("");
+
+            if (count == 0)
+            {
+                OutputHelper.PrintLine("Ihr Inventar ist leer.");
+                return;
+            }
+            int input = InputHelper.GetIntInput(1, count);
+
+            lookAtItem(player, playerItems[input - 1]);
+        }
+
+        private void lookAtItem(Player player, Item item)
+        {
+            Console.Clear();
+            OutputHelper.ColorPrintLineNoReadKey(item.Name, ConsoleColor.Green);
+            OutputHelper.PrintLineNoReadKey(item.Description);
+            OutputHelper.PrintLineNoReadKey("");
+            OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
+
+            Console.Clear();
+            OutputHelper.PrintLineNoReadKey("Wie möchten Sie fortfahren?");
+            OutputHelper.PrintLineNoReadKey("1: Weiter");
+            OutputHelper.PrintLineNoReadKey("2: Zurück");
+
+            int input = InputHelper.GetIntInput(1, 2);
+            if (input == 2)
+            {
+                showInventory(player);
+            }
+        }
+
+        private StoryNode GetCurrentNode(Story story, Player player)
         {
             StoryNode currentNode = null;
 
             foreach (StoryNode storyNode in story.StoryNodes)
             {
-                if (storyNode.Id == player.CurrentNode)
+                if (storyNode.NodeId == player.CurrentNode)
                 {
                     currentNode = storyNode;
                 }
@@ -95,7 +159,7 @@ namespace CreateYourOwnAdventure.service
             return currentNode;
         }
 
-        public List<Choice> GetPossibleChoices(StoryNode storyNode, Player player)
+        private List<Choice> GetPossibleChoices(StoryNode storyNode, Player player)
         {
             List<Choice> possibleChoices = new List<Choice>();
 
