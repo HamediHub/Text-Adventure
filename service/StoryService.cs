@@ -2,9 +2,6 @@
 using CreateYourOwnAdventure.model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CreateYourOwnAdventure.service
 {
@@ -15,11 +12,16 @@ namespace CreateYourOwnAdventure.service
         {
             Story story = StoryHelper.GetStory();
 
-            Console.Clear();
-
             // currentNode ermitteln
             StoryNode currentNode = GetCurrentNode(story, player);
-            OutputHelper.PrintLine(currentNode.NodeText);
+
+            // NodeText ausgeben
+            Console.Clear();
+
+            for (int i = 0; i < currentNode.NodeText.Count; i++)
+            {
+                OutputHelper.PrintLine(currentNode.NodeText[i] + "\n");
+            }
 
             // possibleChoices ermitteln
             List<Choice> possibleChoices = GetPossibleChoices(currentNode, player);

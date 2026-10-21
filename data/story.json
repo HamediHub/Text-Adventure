@@ -1,33 +1,33 @@
 {
-  "title": "Florian's Adventure",
+  "title": "Titel fehlt",
   "storyNodes": [
     {
       "nodeId": "start",
-      "nodeText": "Test Node 1",
+      "nodeText": [
+        "Du könntest dir Besseres vorstellen, als wieder\neinmal mit deiner Tante sonntags Tee zu trinken.\nWeil deine Eltern meinen, es könnte eurer\nBindung guttun.",
+        "Eigentlich hast du noch für eine Klausur zu\nlernen. LF8. Nicht, dass du den aktuellen\nUmstand ungern dafür nutzt, um zu\nprokrastinieren, aber ... Dir zum fünften Mal\nanhören zu müssen, welchen furchtbaren neuen\nMann deine Tante auf Tinder kennengelernt hat,\nist eigentlich fast noch schlimmer.",
+        "\"Ich muss mal kurz ... äh ... auf Toilette\",\nentschuldigst du dich und hoffst auf die\nMöglichkeit, kurz frische Luft zu schnappen. Also\nim metaphorischen Sinne. Ihr sitzt bereits an\neinem heruntergekommenen Gartentisch in ihrem\nHinterhof, während die Nachbarn nebendran mit\neinem elektrischen Heckenschneider arbeiten,\nwas die Atmosphäre nicht gerade besser macht.",
+        "Ehe dir deine Tante, wie jedes Mal, erklären kann,\nwelchen Weg du gehen musst und dass du ja\nnicht die zweite Tür von links zu öffnen hast,\nsondern die Dritte - oder war es umgekehrt? -\nmachst du dich mit schnellen Schritten aus dem\nStaub, um dich zurück in ihrem Hausflur zu\nverkriechen.",
+        "Es riecht nach einer Mischung aus Staub und\nbilligen Räucherstäbchen. Kurz spielst du mit\ndem Gedanken, ein Fenster zu öffnen, steuerst\ndann jedoch die dritte Tür von links an.\n\nOder war es doch die Zweite, die zur Toilette führt?",
+        "Deine Tante sollte vielleicht damit beginnen,\nDinge auszuschildern, denkst du belustigt zu dir\nselbst, während du die Türklinke herunterdrückst.",
+        "Bis du merkst, dass du ihr wirklich besser hättest\nzuhören müssen."
+      ],
       "choices": [
         {
-          "choiceText": "Choice 1",
+          "choiceText": "weiter",
           "requiredItemId": null,
           "targetNodeId": "weiter",
           "rewardItemId": null
-        },
-        {
-          "choiceText": "Choice 2 (mit requiredItemId)",
-          "requiredItemId": "TestItem",
-          "targetNodeId": "weiter",
-          "rewardItemId": null
-        },
-        {
-          "choiceText": "Choice 3 (mit rewardItemId)",
-          "requiredItemId": null,
-          "targetNodeId": "weiter",
-          "rewardItemId": "TestItem"
         }
       ]
     },
     {
       "nodeId": "weiter",
-      "nodeText": "Test Node 2",
+      "nodeText": [
+        "weiter gehts",
+        "blablabla",
+        "bliblablub"
+      ],
       "choices": [
         {
           "choiceText": "Test 2",

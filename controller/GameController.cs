@@ -17,6 +17,7 @@ namespace CreateYourOwnAdventure.controller
         {
             Player selectedPlayer = StartMenu();
 
+            Console.Clear();
             OutputHelper.PrintLine(StoryHelper.GetStory().Title);
 
 
@@ -25,8 +26,6 @@ namespace CreateYourOwnAdventure.controller
                 storyService.TraverseStory(selectedPlayer);
 
                 playerService.SavePlayer(selectedPlayer);
-
-                Console.ReadKey();
 
                 Console.Clear();
                 OutputHelper.PrintLineNoReadKey("Was möchten Sie tun?");

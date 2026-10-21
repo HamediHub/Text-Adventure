@@ -9,7 +9,7 @@ namespace CreateYourOwnAdventure.model
     internal class StoryNode
     {
         private string nodeId;
-        private string nodeText;
+        private List<string> nodeText;
         private List<Choice> choices;
 
         public string NodeId
@@ -24,7 +24,7 @@ namespace CreateYourOwnAdventure.model
             }
         }
 
-        public string NodeText
+        public List<string> NodeText
         {
             get
             {
