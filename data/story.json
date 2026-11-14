@@ -1,38 +1,234 @@
 {
-  "title": "Titel fehlt",
+  "title": "Fiebertraum im Märchenland",
   "storyNodes": [
     {
       "nodeId": "start",
       "nodeText": [
-        "Du könntest dir Besseres vorstellen, als wieder\neinmal mit deiner Tante sonntags Tee zu trinken.\nWeil deine Eltern meinen, es könnte eurer\nBindung guttun.",
-        "Eigentlich hast du noch für eine Klausur zu\nlernen. LF8. Nicht, dass du den aktuellen\nUmstand ungern dafür nutzt, um zu\nprokrastinieren, aber ... Dir zum fünften Mal\nanhören zu müssen, welchen furchtbaren neuen\nMann deine Tante auf Tinder kennengelernt hat,\nist eigentlich fast noch schlimmer.",
-        "\"Ich muss mal kurz ... äh ... auf Toilette\",\nentschuldigst du dich und hoffst auf die\nMöglichkeit, kurz frische Luft zu schnappen. Also\nim metaphorischen Sinne. Ihr sitzt bereits an\neinem heruntergekommenen Gartentisch in ihrem\nHinterhof, während die Nachbarn nebendran mit\neinem elektrischen Heckenschneider arbeiten,\nwas die Atmosphäre nicht gerade besser macht.",
-        "Ehe dir deine Tante, wie jedes Mal, erklären kann,\nwelchen Weg du gehen musst und dass du ja\nnicht die zweite Tür von links zu öffnen hast,\nsondern die Dritte - oder war es umgekehrt? -\nmachst du dich mit schnellen Schritten aus dem\nStaub, um dich zurück in ihrem Hausflur zu\nverkriechen.",
-        "Es riecht nach einer Mischung aus Staub und\nbilligen Räucherstäbchen. Kurz spielst du mit\ndem Gedanken, ein Fenster zu öffnen, steuerst\ndann jedoch die dritte Tür von links an.\n\nOder war es doch die Zweite, die zur Toilette führt?",
-        "Deine Tante sollte vielleicht damit beginnen,\nDinge auszuschildern, denkst du belustigt zu dir\nselbst, während du die Türklinke herunterdrückst.",
-        "Bis du merkst, dass du ihr wirklich besser hättest\nzuhören müssen."
+        "Du könntest dir Besseres vorstellen, als wieder\neinmal mit deiner Tante sonntags Tee zu trinken.\nWeil deine Eltern meinen, es könnte eurer\nBindung guttun.\n",
+        "Eigentlich hast du noch für eine Klausur zu\nlernen. LF8. Nicht, dass du den aktuellen\nUmstand ungern dafür nutzt, um zu\nprokrastinieren, aber ... Dir zum fünften Mal\nanhören zu müssen, welchen furchtbaren neuen\nMann deine Tante auf Tinder kennengelernt hat,\nist eigentlich fast noch schlimmer.\n",
+        "\"Ich muss mal kurz ... äh ... auf Toilette\",\nentschuldigst du dich und hoffst auf die\nMöglichkeit, kurz frische Luft zu schnappen. Also\nim metaphorischen Sinne. Ihr sitzt bereits an\neinem heruntergekommenen Gartentisch in ihrem\nHinterhof, während die Nachbarn nebendran mit\neinem elektrischen Heckenschneider arbeiten,\nwas die Atmosphäre nicht gerade besser macht.\n",
+        "Ehe dir deine Tante, wie jedes Mal, erklären kann,\nwelchen Weg du gehen musst und dass du ja\nnicht die zweite Tür von links zu öffnen hast,\nsondern die Dritte - oder war es umgekehrt? -\nmachst du dich mit schnellen Schritten aus dem\nStaub, um dich zurück in ihrem Hausflur zu\nverkriechen.\n",
+        "Es riecht nach einer Mischung aus Staub und\nbilligen Räucherstäbchen. Kurz spielst du mit\ndem Gedanken, ein Fenster zu öffnen, steuerst\ndann jedoch die dritte Tür von links an.\n",
+        "Oder war es doch die Zweite, die zur Toilette führt?\n",
+        "Deine Tante sollte vielleicht damit beginnen,\nDinge auszuschildern, denkst du belustigt zu dir\nselbst, während du die Türklinke herunterdrückst.\n",
+        "Bis du merkst, dass du ihr wirklich besser hättest\nzuhören müssen.\n"
       ],
       "choices": [
         {
-          "choiceText": "weiter",
+          "choiceText": null,
           "requiredItemId": null,
-          "targetNodeId": "weiter",
+          "targetNodeId": "freefalltower",
           "rewardItemId": null
         }
       ]
     },
     {
-      "nodeId": "weiter",
+      "nodeId": "freefalltower",
       "nodeText": [
-        "weiter gehts",
-        "blablabla",
-        "bliblablub"
+        "Du warst schon mal in einem Freefalltower.\nEinmal. Mit vierzehn. Und du warst nach deiner\nersten Fahrt so grün im Gesicht, dass dir dein\nbester Kumpel vorsorglich seine leere Papiertüte\nin die Hand gedrückt hat, in welcher kurz zuvor\nnoch 5 fetttriefende Churros gesteckt hatten.\n",
+        "Doch dieser Sturz fühlt sich anders an.\nLangsamer. Zeitloser. Als hätte man dich ins\nMeer gestoßen und du würdest fortwährend tiefer\nsinken, ohne dich um einen zeitnahen\nErstickungstod sorgen zu müssen.\n",
+        "Lieber sorgst du dich darum, ob in dem Tee\ndeiner Tante wirklich nur Zitronenmelisse war,\nwährend bunte Lichter an dir vorbeiziehen wie in\nden verdunkelten Röhrenrutschen in Aquaparks.\nWann warst du das letzte Mal im Aquapark?\n",
+        "Ehe du eine Antwort auf diese Frage finden\nkannst, landest du mit dem Gesicht voran in einer\nBaumkrone.\n",
+        "Unter einer bemitleidenswerten Symphonie aus,\n\"Argh\", \"Urgh\", \"Aua\" und \"Waaah\", rasselst du\ndurch das lichte Geäst, bis du mit einem dumpfen\nLaut auf dem bemoosten Waldboden aufschlägst.\n",
+        "\"Mega.\" Der Sarkasmus in deiner Stimme ist\ndurch nichts zu überbieten, während du dir die\nschmerzenden Stellen reibst.\n",
+        "Nur, um sogleich wieder innezuhalten, als du\nerkennst, wie jemand unweit von dir seinen Pfeil\nauf die Höhe deines Schädels richtet.\n"
       ],
       "choices": [
         {
-          "choiceText": "Test 2",
+          "choiceText": "Das ist ein guter Moment, um zu schreien.",
           "requiredItemId": null,
-          "targetNodeId": "start",
+          "targetNodeId": "schreien",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Ich hebe instinktiv die Hände über den Kopf.\n   Das klappt bei Polizisten in Filmen auch\n   immer.",
+          "requiredItemId": null,
+          "targetNodeId": "hände",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Ich fingere nach dem Taschenmesser in\n   meiner Hosentasche. Never bring a knife to\n   a gunfight, aber ... irgendwie muss ich mich\n   ja wehren können.",
+          "requiredItemId": null,
+          "targetNodeId": "taschenmesser",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "schreien",
+      "nodeText": [
+        "Du hast das Gefühl, die Vibration in deinem\nganzen Körper zu spüren, während du eine\neinzige schrille Note ausstößt, welche jeden\nSopran im Kirchenchor deiner Mutter vor Neid\nhätte erblassen lassen.\n",
+        "Doch es scheint zu funktionieren, da dein\nGegenüber ebenfalls zu schreien beginnt,\nwährend es einen Schritt nach hinten taumelt und\ndabei den Bogen in einem Moment der\nUnachtsamkeit sinken lässt.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "wer_bist_du",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "hände",
+      "nodeText": [
+        "Allem Anschein nach klappt es nicht einzig bei\nPolizisten, sondern auch bei bewaffneten\nMännern mitten im Wald\n",
+        "Zumindest bei solchen, welche nicht darauf\nabzielen, dich auszurauben (nicht, dass du viel\nGeld dabei hättest ... oder allgemein viel Geld\nbesitzen würdest).\n",
+        "Langsam lässt dein Gegenüber seinen Bogen\nsinken - den Pfeil dabei jedoch noch immer\nschussbereit in Position.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "wer_bist_du",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "taschenmesser",
+      "nodeText": [
+        "Jemand sollte Deo für Hände erfinden, schießt es\ndir durch den Kopf, während dir das\nTaschenmesser fast aus den klatschnassen\nFingern rutscht. Dabei stellt sich dir bereits im\nnächsten Moment die Frage, ob Deo tatsächlich\nden Schweiß oder nur die Geruchsbildung\nverhindert.\n",
+        "Doch du hast weder eine freie Hand, noch die\nrichtige Situation, um kurz auf deinem\nSmartphone zu googeln, während du deinem\nGegenüber zittrig eine daumenlange Klinge\nentgegenstreckst.\n",
+        "Der Mann vor dir stutzt einen Moment, ehe er in\nschallendes Gelächter ausbricht, als hättest du\nihm den Witz des Jahrhunderts präsentiert.\n",
+        "\"Was ist das? Ein Rasiermesser?\"\n",
+        "Eigentlich ist es das treue Werkzeug deines\nverstorbenen Großvaters, welcher in seiner\nFreizeit Wanderstäbe aus herumliegendem Holz\ngezaubert hat. Du hast auch noch einen davon in\ndeinem Keller stehen. Vielleicht brauchst du ihn\nin 50 Jahren.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "wer_bist_du",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "wer_bist_du",
+      "nodeText": [
+        "\"Wer bist du?\"\n",
+        "Er scheint abzuwägen, ehe er einen Schritt näher\ntritt.\n",
+        "Langsam nimmt er dich von den Haarspitzen bis\nzu den ausgelatschten Sneakern in Augenschein.\nSeinem Gesichtsausdruck nach zu urteilen,\nkönntest du genauso gut eine Kuriosität von\neinem anderen Planeten darstellen. Was ...\nvermutlich weniger abwegig ist, als dir lieb wäre.\n",
+        "\"Und was hast du hier zu suchen?\", fügt der Typ\nmit dem Bogen nach einem kurzen Moment des\nunangenehmen Schweigens bei.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": "Ehrlichkeit währt am längsten, meinte meine\n   Mutter immer. \"[PlayerName]\", antworte ich,\n   \"Und ich habe keine Ahnung, was ich hier\n   mache. Ich wollte einfach nur bei meiner\n   Tante aufs Klo.\"",
+          "requiredItemId": null,
+          "targetNodeId": "ehrlichkeit",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Ich schüttele mir lieber eine Geschichte aus\n   dem Ärmel, die mich besser ins Bild passen\n   lässt: \"Ich? Ach, ich bin einfach nur\n   [PlayerName]. Ein Händler aus ...\n   Buxtehude. Du hast sicher schon von mir\n   gehört.\"",
+          "requiredItemId": null,
+          "targetNodeId": "buxtehude",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "\"Äh. Ich bin [PlayerName]. Und ich kann\n   alles sein, was du willst. Wenn du mich dann\n   nicht erschießt-\", sicher ist sicher.",
+          "requiredItemId": null,
+          "targetNodeId": "sicher",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "ehrlichkeit",
+      "nodeText": [
+        "Dein Gegenüber verzieht das Gesicht, als hätte\nes in eine Grapefruit gebissen.\n",
+        "Zumindest hattest du dabei denselben Ausdruck;\nauf einem der alten Kinderfotos, welche nun bei\ndeiner Mutter auf dem Dachboden einstauben.\n",
+        "\"Du suchst die .... Toilette deiner Tante?\"\n",
+        "Der Mann vor dir kann sich allem Anschein nicht\nentscheiden, ob er dich für einen schlechten\nLügner oder einen geistig umnachteten Trottel\nhält. Du erinnerst ihn lieber nicht daran, dass\nauch beides zusammen eine gültige Option wäre.\n",
+        "\"Hab die falsche Tür genommen\", du zuckst mit\nden Schultern. Schlimmer kannst du es nun\nwirklich nicht mehr machen. \"Dann bin ich durch\neinen bunten Strudel gefallen - und hier\ngelandet.\"\n",
+        "Ja. Doch. Der geistig umnachtete Trottel wird für\ndein Gegenüber zu einer immer plausibleren\nErklärung.\n",
+        "\"Ah.\"\n",
+        "Nicht sonderlich geistreich. Aber du hättest\nvermutlich auch nichts Besseres dazu gesagt.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "hunter",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "buxtehude",
+      "nodeText": [
+        "\"Buxte...hude.\" Du hättest deinem Gegenüber\ngenauso gut auf Französisch mitteilen können,\ndass du ein Baguette seist (weiter reicht deine\nSprachbegabung auch nicht) - es hätte dich nicht\nminder irritiert anstarren können.\n",
+        "\"Ok, dann anscheinend nicht\", gestehst du ihm\nzu, als könntest du einen Fan deiner\nHandelspräsenz weniger gerade so\nverschmerzen.\n",
+        "\"Was steht bei dir zum Verkauf?\" Die schlimmste\nFrage, welche er dir hätte stellen können. \"Ich\nsehe weder Gepäck noch Waren.\" Er macht es\nnicht besser.\n",
+        "\"Äh ...\", du kramst hastig in deinen\nHosentaschen. Vorne. Hinten. Bis du schließlich\neine einsame Büroklammer hervorziehst: \"Ha!\nDiebeswerkzeug!\" Zumindest hätte man diese\nBüroklammer in einem Spiel wie Skyrim, oder\neher Fallout, sicher dazu nutzen können, um\nTürschlösser zu knacken.\n",
+        "Erst im nächsten Moment fällt dir auf, dass du\nnicht sonderlich vertrauenserweckend damit\nwirkst, das hiesige Verbrecherleben zu bedienen.\n",
+        "\"... Und wer bist du so?\", versuchst du, das\nGespräch zu retten, von dem eigentlich nichts\nmehr zu retten ist.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "hunter",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "sicher",
+      "nodeText": [
+        "\"Alles?\" Dir gefällt nicht, wie ihm das Wort über\ndie Zunge rollt. \"So, wie du wimmerst, scheinst\ndu zumindest nicht gefährlich zu sein.\"\n",
+        "Er steckt den Bogen weg. Du solltest Dankbarkeit\nempfinden, statt Empörung gegenüber seiner\nImplikation zu nähren, dein\nSelbstverteidigungskurs in der vierten Klasse\nwäre verschwendet gewesen.\n",
+        "\"Also meine Cousine hat Angst vor mir\", gibst du\ntrotzig zurück. Den Kontext unterschlagend, dass\nsie mit einem Alter von drei Jahren nicht gut auf\ndeine kunstblutüberzogene Hockeymaske an\nHalloween zu sprechen gewesen war.\n",
+        "\"Sicher.\"\n",
+        "Du verlierst vor deinem Gegenüber nicht nur\ndeinen letzten Rest Ehrgefühl, sondern auch dein\nletztes Fünkchen Glaubhaftigkeit. Falls du\nüberhaupt je eines von beidem besessen hast.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "hunter",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "hunter",
+      "nodeText": [
+        "\"Ich bin Hunter\", stellt er sich nach einem kurzen\nAugenblick des Schweigens vor. Was zwar\nwiderwillig erfolgt, aber nur höflich ist, nachdem\ndu dich vor ihm erfolgreich zum Clown gemacht\nhast.\n",
+        "\"Du erscheinst mir nicht unbedingt wie die hellste\nKerze am Kronleuchter\", drückt er dir noch etwas\nSalz in die Wunde. \"Doch ich könnte jemanden\nbrauchen, der arglos aussieht ... nun -\nweitgehend - arglos, Befehlen gehorchen kann\nund keine Fragen stellt.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": "Du willst diesem Hunter ja nichts Böses\n   unterstellen, ABER: \"Das klingt höchst\n   illegal.\"",
+          "requiredItemId": null,
+          "targetNodeId": "illegal",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "\"Aber fragen, worum es geht, darf ich ...?\"",
+          "requiredItemId": null,
+          "targetNodeId": "fragen",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Stumm zu nicken, lässt dich vielleicht nicht\n   schlauer wirken - wäre aber deine sicherste\nOption.",
+          "requiredItemId": null,
+          "targetNodeId": "nicken",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "illegal",
+      "nodeText": [
+        "\"Ist es nicht.\" Irgendwie stolpert es deinem\nGegenüber schneller über die Lippen, als du an\nden vermeintlichen Wahrheitsgehalt glauben\nkannst.\n",
+        "\"Sicher ...?\"\n",
+        "\"Wie war das nochmal mit dem: 'Du sollst keine\nFragen stellen'?\" Dass Hunter auf deine Worte hin\ndie Augen zu Schlitzen verengt, hast du\nvermutlich verdient.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "auftrag",
           "rewardItemId": null
         }
       ]

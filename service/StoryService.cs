@@ -15,12 +15,11 @@ namespace CreateYourOwnAdventure.service
             // currentNode ermitteln
             StoryNode currentNode = GetCurrentNode(story, player);
 
-            // NodeText ausgeben
             Console.Clear();
 
             for (int i = 0; i < currentNode.NodeText.Count; i++)
             {
-                OutputHelper.PrintLine(currentNode.NodeText[i] + "\n");
+                OutputHelper.PrintLine(currentNode.NodeText[i]);
             }
 
             // possibleChoices ermitteln
@@ -31,20 +30,12 @@ namespace CreateYourOwnAdventure.service
             Choice selectedChoice = null;
             if (possibleChoices.Count <= 0)
             {
-                OutputHelper.PrintLineNoReadKey("");
-                OutputHelper.PrintLine("Weiter");
+                OutputHelper.PrintLineNoReadKey("Ende");
+                Environment.Exit(0);
                 return;
             }
             else if (possibleChoices.Count == 1) {
-                OutputHelper.PrintLineNoReadKey("1: " +possibleChoices[0].ChoiceText);
-                OutputHelper.PrintLineNoReadKey("2: Beenden");
-
-                int input = InputHelper.GetIntInput(1, 2);
-
-                if (input == 2)
-                {
-                    return;
-                }
+                OutputHelper.PrintLine("[weiter]");
 
                 selectedChoice = possibleChoices[0];
             }
@@ -54,7 +45,7 @@ namespace CreateYourOwnAdventure.service
                 foreach (Choice choice in possibleChoices)
                 {
                     count++;
-                    OutputHelper.Print(count + ": " + choice.ChoiceText);
+                    OutputHelper.Print(count + ": " + choice.ChoiceText.Replace("[PlayerName]", player.Name));
 
                     if (choice.RequiredItemId != null)
                     {
@@ -63,12 +54,13 @@ namespace CreateYourOwnAdventure.service
 
                     OutputHelper.PrintLineNoReadKey("");
                 }
-                OutputHelper.PrintLineNoReadKey(++count + ": Beenden");
+                OutputHelper.PrintLineNoReadKey(++count + ": Menü");
 
                 int input = InputHelper.GetIntInput(1, count);
 
                 if (input == count)
                 {
+                    Menu(player);
                     return;
                 }
 
@@ -174,6 +166,24 @@ namespace CreateYourOwnAdventure.service
             }
 
             return possibleChoices;
+        }
+
+        private void Menu(Player player)
+        {
+            Console.Clear();
+            OutputHelper.PrintLineNoReadKey("Was möchten Sie tun?");
+            OutputHelper.PrintLineNoReadKey("1: Spiel fortsetzen");
+            OutputHelper.PrintLineNoReadKey("2: Inventar anschauen");
+            OutputHelper.PrintLineNoReadKey("3: Spiel beenden");
+            int choice = InputHelper.GetIntInput(1, 3);
+            if (choice == 2)
+            {
+                showInventory(player);
+            }
+            if (choice == 3)
+            {
+                Environment.Exit(0);
+            }
         }
 
     }

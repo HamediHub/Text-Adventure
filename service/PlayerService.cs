@@ -40,6 +40,7 @@ namespace CreateYourOwnAdventure.service
             
             Player newPlayer = new Player(playerName, newUniqueId);
 
+            Console.Clear();
             OutputHelper.ColorPrint(newPlayer.Name, ConsoleColor.Blue);
             OutputHelper.PrintLineNoReadKey(" wurde erfolgreich erstellt.");
             OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
@@ -63,6 +64,7 @@ namespace CreateYourOwnAdventure.service
 
             Player selectedPlayer = players[input - 1];
 
+            Console.Clear();
             OutputHelper.ColorPrint(selectedPlayer.Name, ConsoleColor.Blue);
             OutputHelper.PrintLineNoReadKey(" wurde erfolgreich ausgewählt.");
             OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
@@ -90,6 +92,7 @@ namespace CreateYourOwnAdventure.service
             string jsonPath = @"..\..\data\players.json";
             File.WriteAllText(jsonPath, json);
 
+            Console.Clear();
             OutputHelper.ColorPrint(player.Name, ConsoleColor.Blue);
             OutputHelper.PrintLineNoReadKey(" wurde erfolgreich gespeichert.");
             OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");

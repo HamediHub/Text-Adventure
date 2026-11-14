@@ -15,7 +15,8 @@ namespace CreateYourOwnAdventure.controller
 
         public void StartGame()
         {
-            Player selectedPlayer = StartMenu();
+
+            Player selectedPlayer = PlayerSelection();
 
             Console.Clear();
             OutputHelper.PrintLine(StoryHelper.GetStory().Title);
@@ -27,25 +28,11 @@ namespace CreateYourOwnAdventure.controller
 
                 playerService.SavePlayer(selectedPlayer);
 
-                Console.Clear();
-                OutputHelper.PrintLineNoReadKey("Was möchten Sie tun?");
-                OutputHelper.PrintLineNoReadKey("1: Spiel fortsetzen");
-                OutputHelper.PrintLineNoReadKey("2: Inventar anschauen");
-                OutputHelper.PrintLineNoReadKey("3: Spiel beenden");
-                int choice = InputHelper.GetIntInput(1, 3);
-                if (choice == 2)
-                {
-                    storyService.showInventory(selectedPlayer);
-                }
-                if (choice == 3)
-                {
-                    break;
-                }
             }
          
         }
 
-        private Player StartMenu()
+        private Player PlayerSelection()
         {
             Player selectedPlayer = null;
 
