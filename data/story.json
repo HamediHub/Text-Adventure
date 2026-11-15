@@ -210,7 +210,7 @@
           "rewardItemId": null
         },
         {
-          "choiceText": "Stumm zu nicken, lässt dich vielleicht nicht\n   schlauer wirken - wäre aber deine sicherste\nOption.",
+          "choiceText": "Stumm zu nicken, lässt dich vielleicht nicht\n   schlauer wirken - wäre aber deine sicherste\n   Option.",
           "requiredItemId": null,
           "targetNodeId": "nicken",
           "rewardItemId": null
@@ -232,13 +232,669 @@
           "rewardItemId": null
         }
       ]
+    },
+    {
+      "nodeId": "fragen",
+      "nodeText": [
+        "\"Anders wäre der Auftrag wohl schwer\nausführbar.\"\n",
+        "Hunter verdreht die Augen, bis er seine\nSchädeldecke vermutlich von innen betrachten\nkann. Wenn du seine Ansprüche an deinen\nIntellekt noch tiefer herabsetzen möchtest, mach\nweiter so.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "auftrag",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "nicken",
+      "nodeText": [
+        "Hunter nimmt deinen Gehorsam ohne dümmliche\nErwiderung positiv genug auf, um ohne einen\nweiteren Kommentar zum Wesentlichen\nüberzugehen.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "auftrag",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "auftrag",
+      "nodeText": [
+        "\"Es geht um einen Auftrag im Dienste der Königin\nhöchstpersönlich.\"\n",
+        "Die Art, wie er es betont, sollte dir irgendeine\nehrfürchtige Gesichtsregung entlocken.\nStattdessen hängt dein gedankenleerer Blick an\nseinem, als wärst du ein Rehkitz und er der\nAutoscheinwerfer.\n",
+        "\"Die ... Queen?\" Ach, nein, Moment - die ist doch\nschon seit einer Weile tot.\n",
+        "\"Ihre erhabene Hoheit Grimhilde!\"\n",
+        "Du versenkst die Zähne in der Unterlippe, um\nnicht lauthals loszuprusten. Du weißt nicht, was\ndabei witziger ist: Dieser bescheuerte Name oder\ndie Art, wie sich Hunter in den wilden Gestiken\neines eifernden Gremlins verliert.\n",
+        "\"Grimhilde. Stimmt. Hätte in PoWi besser\naufpassen sollen.\" Des Weiteren hättest du\nlernen sollen, wann man seine Gedanken am\nbesten für sich behält. Der Blick deines\nGegenübers vermittelt den Anschein, es würde\nnur zu gerne wieder nach Pfeil und Bogen\nlangen.\n",
+        "Dass sich Hunter wieder in Bewegung setzt, um\ndir bedrohlich nahe zu kommen, gestaltet die\nSituation nicht unbedingt besorgnislindernder.\n",
+        "\"Du scheinst die Wichtigkeit dieses Unterfangens\nnicht zu begreifen.\"\n",
+        "Du erwartest das Schlimmste, als er in sein\nMantelinneres greift. Zur Verflüchtigung deiner\nTodesangst zieht er jedoch keinen Dolch, sondern\neinen stinknormalen Brief hervor.\n",
+        "Also stinknormal im Sinne von: Was man eben\naus solchen Mittelalterserien wie Game of\nThrones gewohnt ist. Altes Pergament mit\nWachssiegel.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "brief",
+          "rewardItemId": "brief"
+        }
+      ]
+    },
+    {
+      "nodeId": "brief",
+      "nodeText": [
+        "Es sollte dich verstören, durch eine Tür im Haus\ndeiner Tante mitten in ein altvertrautes Märchen\ngestolpert zu sein. Gefolgt von tausend Fragen -\nallen voran: Wie zur magischen Kürbiskutsche\nsollst du von hier aus nach Hause zurückkehren\nkönnen??\n",
+        "Würde sich nicht deine Verärgerung darüber in\nden Vordergrund drängen, dass man besagtes\nMärchen in dieser Parallelwelt anders ausgelegt\nhatte, als in der dir bekannten Disney-Verfilmung.\n",
+        "\"Trolle\". Eigentlich müssten es Zwerge sein.\nEtwas anderes hätte der Titel \"Schneewittchen\nund die 7 Zwerge\" ja wohl kaum zugelassen.\n",
+        "Gut. Schließt ja keiner aus, dass die \"böse\nKönigin\" in ihrem Brief flunkert wie Pinocchio.\n",
+        "Doch wenn es stimmt, dass die entflohene\nPrinzessin nun selbst die Zügel in die Hand\nnimmt, um diese Witzfigur Grimhilde von ihrem\nThron zu stoßen, kannst du ihr das grundsätzlich\nnicht verübeln.\n",
+        "Wenn man bedenkt, dass die Königin ihre\nStieftochter nur deshalb lynchen will, weil ein\nZauberspiegel gesagt hat, sie sei tausendmal\nhübscher, ... dann ist das schon hochgradig\ngestört.\n",
+        "Hochgradig gestört, wie so ziemlich jeder\nMärchen-Plot, der dir auf Anhieb durch den Kopf\nspringt. Eigentlich grenzt es schon an ein\nWunder, dass du die Geschichten, welche deine\nMutter dir bis in die Grundschule zum Einschlafen\nvorgelesen hat, ohne ein Kindheitstrauma\nüberstanden hast.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": "Ja, du hast den Brief zur Kenntnis\n   genommen - und, nein, du wirst sicherlich\n   niemanden umbringen.",
+          "requiredItemId": null,
+          "targetNodeId": "kenntnis",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Hat Hunter schon mal drüber nachgedacht,\n   dass eigentlich Grimhilde das Problem in\n   diesem Märchen ist?",
+          "requiredItemId": null,
+          "targetNodeId": "grimhilde_ist_problem",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Ob pädagogisch wertvoll oder nicht - am\n   Ende sind Märchen nicht echt. Was doch\n   eigentlich heißt, dass du dir hier alles\n   erlauben kannst. Und, um ehrlich zu sein,\n   wolltest du schon immer Mal irgendwo den\n   Bösen spielen ...",
+          "requiredItemId": null,
+          "targetNodeId": "boese",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "kenntnis",
+      "nodeText": [
+        "Noch immer spürst du Hunters erwartungsvollen\nBlick auf dir lasten, während du das Pergament\nfortlaufend mit dem Nervositätsschweiß deiner\nFinger tränkst. Hastig reichst du ihm den Brief\nzurück, um diesen Umstand zu kaschieren.\n",
+        "\"Also ...\", ja, du solltest keine Fragen stellen.\nAber, nein, DAS hier musst du definitiv\nhinterfragen:\n",
+        "\"Du erwartest von mir, die Prinzessin zu töten ...\nund gehst davon aus, ein Brief könnte mich davon\nüberzeugen, meine Moral über Bord zu\nschmeißen?\"\n",
+        "Gut. Strenggenommen bist du auch nicht\nsonderlich moralisch damit, ein Handy zu\nbesitzen, billige T-Shirts zu kaufen und deine\nbisherigen Versuche, vegan zu leben, weniger\nernstzunehmen, als du ursprünglich wolltest.\nAber ... das hier ist nun schon eine ganz andere\nHausnummer.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": "brief",
+          "targetNodeId": "lockvogel",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "grimhilde_ist_problem",
+      "nodeText": [
+        "\"Das wird dein Weltbild vielleicht zum Einsturz\nbringen\", oder zumindest ankratzen. Hoffst du.\nWährend du Hunter vorsichtig den Brief zurück in\ndie Hand drückst. \"Aber ... Hast du schon mal in\nErwägung gezogen, dass die Königin diese\nGeschichte zu ihren eigenen Gunsten auslegt?\"\n",
+        "Du ziehst den Kopf ein und rechnest bereits\ndamit, ihn gegebenenfalls zu verlieren.\n",
+        "Doch Hunter folgt keinem Impuls, doch noch\neinen Dolch zu zücken. Stattdessen faltet er\nbehutsam den Brief zusammen und lässt ihn\nzurück in die Innentasche seines Mantels\nverschwinden.\n",
+        "\"Natürlich.\" Du weißt nicht, ob du aus Hunters\nbeiläufigem Tonfall eine tiefgreifende Erkenntnis\nlesen möchtest. \"Sie hat sich viel zu lange\nerfolglos damit herumgeschlagen, dieses\nwiderspenstige Mädchen zu einer edelmütigen\nDame zu erziehen. Nach allem, was sie von\ndiesem Kind erduldet hat, ist es nur verständlich,\ndass sie letztlich ihre Konsequenz daraus zieht.\nNachdem sie so lange nachsichtig gewesen ist,\nmuss sie endlich an sich selbst denken.\"\n",
+        "... So hattest du das eigentlich nicht gemeint.\n",
+        "Ehe du fertig abgewägt hast, ob du nochmals\nversuchen solltest, Hunters Horizont mit deiner\neigenen Märchenkenntnis auszuweiten, fährt er\nbereits mit seiner Schwärmerei fort:\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": "brief",
+          "targetNodeId": "lockvogel",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "boese",
+      "nodeText": [
+        "Mit dem schurkischen Grinsen, welches sich auf\ndeinen Lippen breitmacht, hättest du sicherlich\neinen Platz in deiner lokalen Schauspielschule\nerhalten.\n",
+        "Dabei musst du dir eingestehen: Je mehr du dich\nvon dieser bizarren Geschichte distanzierst und\nstattdessen damit beginnst, sie wie ein\nBühnenstück zu betrachten - desto mehr\nschwindet deine anfängliche Furcht.\n",
+        "Man könnte es auch \"Verdrängung\" nennen.\nWas sicher nicht den gesündesten\nKompensationsmechanismus darstellt. Doch\ndu nimmst, was du kriegen kannst.\n",
+        "In deiner neu gewählten Rolle strebst du eine\nselbstsichere Haltung an, ehe du Hunter seinen\nBrief zurück in die Hände reichst. Noch immer\nziert ein triumphaler Ausdruck dein Gesicht.\n",
+        "\"Ich würde sagen, dann ist es an der Zeit, eine\nVerräterin zu stürzen\", säuselst du.\n",
+        "Hunter hinterfragt deinen plötzlichen\nCharakterwandel nicht. Viel eher findet er\nsichtlichen Gefallen an deiner plötzlichen\nKooperationsbereitschaft.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": "brief",
+          "targetNodeId": "lockvogel",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "lockvogel",
+      "nodeText": [
+        "\"Was unsere geschätzte Königin wünscht, das\nwird sie erhalten.\" Dass Hunter niemals einen\nanderen Pfad in Erwägung ziehen würde, macht\nsein eifernder Tonfall mehr als deutlich.\n",
+        "\"Es ist nicht so, als würde ich von dir verlangen,\ndie verräterische Königstochter selbst mit der\nKlinge zu beehren. Ich benötige lediglich einen ...\nLockvogel.\n",
+        "Trotz des Zögerns in seiner Stimme, versucht dir\nsein Ausdruck zu vermitteln, man könnte dir kaum\neine bessere Aufgabe zuteilen.\n",
+        "\"Ich werde derjenige sein, der aus dem Hinterhalt\nden richtenden Pfeil abschießt.\"\n"
+      ],
+      "choices": [
+        {
+          "choiceText": "Beim besten Willen: Du wirst definitiv keinem\n   Mord assistieren. Dafür darf er sich brav\n   einen anderen suchen.",
+          "requiredItemId": null,
+          "targetNodeId": "keine_mordassistenz",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Dich jetzt zu widersetzen, wäre unklug, wenn\n   der Kerl vor dir einen Bogen, während du\n   lediglich ein daumenlanges Taschenmesser\n   vorzuweisen hast ...",
+          "requiredItemId": null,
+          "targetNodeId": "widersetzen_unklug",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Nein. Das kitzelt keinerlei Bedenken in dir\n   hervor. Du bist immer noch Feuer und\n   Flamme, diesem Märchen ein anderes Ende\n   zu verpassen als in den Büchern und\n   Kinderfilmen.",
+          "requiredItemId": null,
+          "targetNodeId": "keine_bedenken",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "keine_mordassistenz",
+      "nodeText": [
+        "\"Ach so\", sicher kannst du es dir absolut nicht\nleisten - doch so langsam wirst du ungenießbar:\n\"Wenn du den Pfeil abschießt, macht mich das ja\nnur zur Beihilfe. Ein halber Mörder ist immer noch\nbesser, als ein ganzer Mörder zu sein.\" Am\nliebsten würdest du Hunter diese Worte\nregelrecht vor die Füße spucken. \"Wenn das die\nTechnik ist, mit der du Leute für deine\nDrecksarbeit anheuerst, solltest du vielleicht\nnochmal die ein oder andere Nacht drüber-\"\n",
+        "Weiter kommst du nicht, ehe Hunter zwei\nschnelle Schritte vorprescht, um dich mit dem\nRücken gegen einen nahegelegenen Baum zu\nstoßen. Etwas Silbernes blitzt auf und sogleich\nspürst du den gefürchteten Dolch, welcher sich\nmit - noch - erträglichem Druck gegen deine\nKehle presst.\n",
+        "Du hast nicht vor, herauszufinden, wie sich die\nweniger behutsame Handhabung so dicht an\ndeiner Haut anfühlt ...\n",
+        "\"Du hörst mir jetzt gut zu ...\", Hunter senkt die\nStimme zu einem bedrohlichen Grollen. Als wäre\ndie Klinge nicht schon genug, um deine volle\nAufmerksamkeit auf sich zu ziehen.\n",
+        "\"Du warst privilegiert genug, um einen Blick auf\nein geheimes Dokument werfen zu dürfen\" -\nhättest du denn ablehnen können? - \"Und\nentweder, du gehst nun vertrauensvoll damit um,\noder du nimmst es mit dir ins Grab. Hast du mich\nverstanden?\"\n",
+        "Und wie du ihn verstanden hast. Du bist weder\nThor, noch Ironman. Es kostet dich höchstens den\nKopf, hier den Helden zu spielen.\n",
+        "\"Ob du mich verstanden hast?\" Die Klinge presst\nsich weiter vor in deinen Hals, bis du Schmerz\ngepaart von Hitze auf deiner Haut wahrnimmst.\n",
+        "Es wäre ungünstig, zu nicken. Du ringst dich zu\neinem atemlosen \"J-ja\", durch - und schnappst\ngleich darauf nach Luft, als Hunter von dir\nablässt.\n",
+        "Beiläufig lässt er den Dolch dorthin zurück\nverschwinden, wo er ihn herhat.\n",
+        "\"Da das nun geklärt ist.\"\n",
+        "Mit einer Laune, als hätte es sieben Tage lang\nseine Exfreundin geregnet, verweist er zurück auf\nden Waldpfad, von welchem ihr abgekommen\nseid.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "in_den_wald",
+          "rewardItemId": "halsverletzung"
+        }
+      ]
+    },
+    {
+      "nodeId": "widersetzen_unklug",
+      "nodeText": [
+        "Du willst Hunters Plan nicht zustimmen ... aber\nablehnen kannst du ihn auch schlecht. Zumindest\nnicht, wenn dir dein eigenes Leben lieb ist.\n",
+        "Nicht, dass du einen Mord mit deiner Moral\nvereinbaren könntest. Auch dann nicht, wenn\ndeine eigenen Finger sauber bleiben.\n",
+        "Aber das hier ist ohnehin nicht die \"echte\" Welt,\nversuchst du, dir zu sagen. Wichtig ist nur, dass\ndu das hier weitgehend sicher überstehst und\neinen Weg zurück nach Hause findest.\n",
+        "Demnach magst du dich vielleicht feige - aber\nauch nicht lebensmüde - verhalten, indem du\nHunters Anweisungen nachgibst.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "in_den_wald",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "keine_bedenken",
+      "nodeText": [
+        "\"Dann lass uns nicht länger warten.\" Kannst du\ndas noch etwas hochgestochener?\n",
+        "Du räusperst dich vor dem Versuch, einer\nweiteren Theaterleistung:\n",
+        "\"Dieses Ungeziefer hat sich schon zu lange in\nderDuldsamkeit der werten Hoheit Grimhilde\ngesuhlt\", es kostet dich alle Selbstbeherrschung,\num deinen ernsten Ausdruck nicht an\nschallendes Gelächter zu verlieren. Du findest\ndiesen Namen noch immer unglaublich dämlich.\n\"Weise den Weg, Jäger der Königin.\"\n",
+        "Denn das ist seine Rolle. Ihr spielt Rollen. Ihr\nseid nun Teil eines Spiels.\n",
+        "Das ist es, was du dir vor Augen halten musst,\num der Zukunft blind gegenüber zu treten, dass\nman dich in einen Mord verwickeln könnte, der\nechter ist als eine kindische Märchenwelt ...\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "in_den_wald",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "in_den_wald",
+      "nodeText": [
+        "Hunter übernimmt die Führung, während ihr euch\nfortwährend tiefer in den Wald begebt.\n",
+        "Hatte sich anfangs noch das Tageslicht durch die\nbreiten Lücken in saftig grünen Baumkronen\ngeschoben, kommt es dir mit jeder weiteren\nMinute so vor, als würde der Pfad, auf dem ihr\nwandelt, dunkler werden. Verzweigter.\nGefährlicher ...\n",
+        "Zwischen deine eiligen Schritte mischen sich\nGeräusche weiterer Pfotenpaare. Tiergeschrei.\nBrechende Äste. Pfeifender Wind.\n",
+        "Dass Hunter bereits seinen Pfeil im Bogen\nbereithält, trägt nicht gerade zur Linderung deiner\ninneren Unruhe bei.\n",
+        "Als es neben dir im Gebüsch raschelt, kannst du\nnicht verhindern, dass du Hunter beinahe\nschreiend in die Arme springst.\n",
+        "\"Beinahe\". Zu deinem Glück. Alles andere wäre\nmehr als entwürdigend gewesen.\n",
+        "Auf deine übereilte Panikreaktion hin wird es im\nGeäst wieder still. Wenn auch nicht für lang und\ndu gewinnst den Eindruck, etwas knabbern zu\nhören ...\n"
+      ],
+      "choices": [
+        {
+          "choiceText": "Das wäre deine Chance darauf, ein\n   Märchentier zu sehen ... oder eine Hand zu\n   verlieren. Du bist gewillt, das Risiko\n   einzugehen.",
+          "requiredItemId": null,
+          "targetNodeId": "apfel",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Es wäre das Weiseste, einfach\n   weiterzugehen und dich an deine bewaffnete\n   Begleitung zu halten ...",
+          "requiredItemId": null,
+          "targetNodeId": "kein_apfel",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "apfel",
+      "nodeText": [
+        "Vielleicht ist es nur ein stinknormales\nEichhörnchen - ein gefährliches Wildschwein\nhätte sich sicher anders angehört. Doch mit\netwas Glück ... Inmitten eines Märchens könnte\nman davon ausgehen, in einem Wald wie diesem\nauf etwas Besonderes zu stoßen.\n",
+        "Und sollte sich die \"Besonderheit\" des Wesens\nim Gebüsch in der Bedrohung deines\nWohlergehens äußern, möchtest du dich\nzuversichtlich in Hunters Schusskünste zeigen.\n",
+        "Bestimmt würde er dich in einem Notfall retten.\nEr braucht dich doch. Zumindest genug, um an\ndeinem Überleben interessiert zu sein.\n",
+        "Du nimmst einen tiefen Atemzug. Dann wagst du\ndich vorsichtig auf den Ursprung des Raschelns\nzu.\n",
+        "Als du behutsam die Äste des Gebüschs teilst,\nmisslingt es dir, einen weiteren Aufschrei zu\nverhindern, während dich die sechs\nverwunderten Augenpaare eines haarigen\nRieseninsekts anstarren.\n",
+        "Das Tellergroße Vieh hat jedoch mehr Angst vor\ndir als du vor ihm - obwohl das nicht mehr im\nBereich des Möglichen liegen sollte - und nimmt\nschleunigst die acht Beine in die Hand.\n",
+        "Zurück bleibt ein malerischer rubinroter Apfel,\ndessen einziger Makel sich in wenigen kleinen\nBissspuren finden lässt.\n",
+        "Du wärst dämlich, das gute Stück in einem\nMärchen wie diesem nicht einzustecken.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "herumwandern",
+          "rewardItemId": "apfel"
+        }
+      ]
+    },
+    {
+      "nodeId": "kein_apfel",
+      "nodeText": [
+        "Du vertraust darauf, in dieser Welt auf nichts\nvertrauen zu können, was du nicht kennst.\n",
+        "Wenn in diesem Gebüsch irgendetwas darauf\nlauert, dein Fleisch zu kosten, wirst du diese\nMöglichkeit sicher nicht wie auf einem\nSilbertablett serviert zwischen eine Lücke im\nGeäst halten.\n",
+        "Du setzt deinen Weg unbeirrt fort und bist davon\nüberzeugt, dass das die bessere Entscheidung\nwar.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "herumwandern",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "herumwandern",
+      "nodeText": [
+        "Nach gefühlten Stunden des ziellosen\nHerumwanderns - die genauso gut 20 Minuten\nhätten sein können - hält dich Hunter ruckartig mit\neinem ausgestreckten Arm zurück, welcher sich\nvor dir wie eine geschlossene U-Bahn-Schranke\nauftut.\n",
+        "Du schaffst es im letzten Moment, abzubremsen,\nbevor es eine unsanfte Kollision gibt.\n",
+        "\"Da.\" Hunter kneift die Augen zusammen, als\nwürde dies ein frisch poliertes Fernglas ersetzen.\nViel eher erweckt er dabei den Anschein, als\nhätte er eine Hornhautverkrümmung. Doch\ninmitten des Märchenlands kannst du ihm wohl\nschlecht den Optiker des Vertrauens deiner\nGroßmutter empfehlen.\n",
+        "Du folgst seinem Blick und musst enttäuscht\nfeststellen:\nEine Hütte, in der 7 Zwerge hausen, hast du dir\nirgendwie anders vorgestellt.\n",
+        "Stattdessen scheint Königin Grimhilde Recht zu\nbehalten, wenn sie über ein Leben wie die Wilden\nschreibt.\n",
+        "Das Lager von Schneewittchen und ihrem\nmutmaßlichen Gefolge - von welchem du jedoch\nkeine Zwergenseele ausmachen kannst -\nbeschränkt sich auf acht überschaubare Zelte, in\nwelchen sich nur das Allernötigste befinden kann.\nDas Einzige, was noch dazwischen hervorsticht,\nist eine zentral gelegene Feuerstelle, an welcher\neine bildhübsche (wenn auch schon länger nicht\nmehr gekämmte) Frau ihr Süppchen kocht.\n",
+        "\"Das ist sie\", merkt Hunter unnötigerweise an.\n",
+        "Gut. Der Mann kann auch nicht wissen, dass du\ndas Märchen mehr als einmal gelesen hast,\nwodurch sich \"Haar so schwarz wie Ebenholz\",\n\"Lippen so rot wie Blut\" und \"Haut so weiß wie\nSchnee\", tief genug in dein Hirn eingebrannt hat,\num es zu gegebener Zeit wiederzuerkennen.\n",
+        "\"Du weißt, was du zu tun hast.\"\n",
+        "Mit diesen Worten lässt er dich unweit der\nLichtungsgrenze stehen, während er selbst\nzwischen den Büschen verschwindet.\n",
+        "Am liebsten würdest du es ihm gleichtun.\n",
+        "Stattdessen bist du dazu gezwungen, dich erneut\nzum Clown zu machen, indem du unbeholfen\ndurch das Wurzelwerk stolperst, um letztlich vor\nden geweiteten Augen deiner Zielperson sichtlich\nnach einem Grund zu graben, aus welchem du\nunbedingt mit ihr ins Gespräch kommen musst.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": "Du hast dich verlaufen und hast ... Hunger?\n   Zumindest riecht das Essen gut. Äh - und\n   außerdem brauchst du jemanden, der dich\n   zurück aus dem Wald führt!",
+          "requiredItemId": null,
+          "targetNodeId": "essen",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Wie man unschwer an deiner Wunde\n   erkennen kann, wurdest du überfallen.\n   Deinen Freund hat es noch schlimmer\n   getroffen als dich - wenn ihm nur jemand\n   helfen könnte!",
+          "requiredItemId": "halsverletzung",
+          "targetNodeId": "hilfe",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Wenn du sie jetzt nicht warnst, ist es für sie\n   sicher zu spät. Solltest du einen Flüsterton\n   wahren, wird dich Hunter nicht gleich\n   erschießen ... oder?",
+          "requiredItemId": null,
+          "targetNodeId": "warnen",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "essen",
+      "nodeText": [
+        "\"Äh\", brichst du geistreich das Schweigen\nzwischen euch. \"Ich glaub', ich hab mich verirrt.\"\n",
+        "Du bist dir sicher, würde Hunter direkt hinter dir\nstehen, hättest du für dein dämliches Gestammel\nnun einen Schlag gegen den Hinterkopf kassiert.\n",
+        "Doch deine peinlich berührten Versuche\nscheinen Früchte zu tragen und du erntest Mitleid\nin den Augen deines Gegenübers.\n",
+        "\"Und ich habe Hunger\", fügst du möglichst\nweinerlich bei. Was mitunter davon motiviert ist,\ndass die Suppe in ihrem Topf einen wirklich\nvorzüglichen Duft in deine Nase trägt.\n",
+        "\"Oh\", korrigierst du dich hastig, um nicht zu\nfordernd zu erscheinen, \"Aber in erster Linie\nbräuchte ich jemanden, der mir dabei hilft, wieder\naus diesem Wald heraus zu finden!\n",
+        "Du entlockst deinem Gegenüber den Anflug\neines amüsierten Schmunzelns. Bei ihrem\nmalerischen Anblick kannst du nicht verhindern,\ndass es dich zum Schmelzen bringt.\n",
+        "\"Hier\", sie füllt dir eine Schale Suppe ab, welche\nsie dir mit einem warmen Lächeln entgegen hält.\n\"Komm erst einmal zu Kräften. Danach kümmern\nwir uns darum, dass du sicher zurück nach\nHause kommst.\"\n",
+        "\"Danke.\"\n",
+        "Es fühlt sich falsch an, etwas von einer Person\nentgegen zu nehmen, mit deren Mord man dich\nbeauftragt hat. Wenn auch nur indirekt. Es ist\ndirekt genug.\n",
+        "Doch du weißt, dass du Hunter im Rücken hast -\nund du würdest dein mickriges Erspartes darauf\nverwetten, dass der erste Pfeil dich trifft, solltest\ndu es dir erlauben, vom Plan abzuweichen.\n",
+        "\"Das ist sehr nett\", beteuerst du nur, während du\nes nicht länger schaffst, ihr in diese\nzuneigungsvollen Augen zu schauen.\n",
+        "\"Nichts zu danken\", ihr liebliches Säuseln klingt\ndir wie Musik in den Ohren. \"Eigentlich sollte es\nfür uns alle selbstverständlich sein, in Zeiten der\nNot das Richtige zu tun.\"\n",
+        "Mit diesen Worten schließt sich eine eiserne\nFaust um deinen Magen, die es dir schwer\nmacht, dein Mahl zu genießen.\n",
+        "Sie lässt dich auch dann nicht los, als ihr\naufbrecht, um erneut durch die Tiefen des\nWaldes zu spazieren.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "hinterhalt",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "hilfe",
+      "nodeText": [
+        "Soziale Situationen waren nie deine Stärke. Doch\ndieses Mal bist du gewillt, deine Ängste nicht zu\nüberspielen.\n",
+        "Stattdessen fachst du sie umso weiter an, bis dir\nein Ausdruck von Panik ins Gesicht geschrieben\nsteht.\n",
+        "\"Wir wurden angegriffen!\", rufst du in einer\nVehemenz aus, welche dein Gegenüber\nregelrecht zusammenfahren lässt. \"Von Banditen!\nSie haben uns im Wald abgefangen und uns um\nunser Geld bedroht! Hier\", du reckst ihr\ndemonstrativ deinen geschundenen Hals\nentgegen.\n",
+        "Erschrocken führt sich die engelsgleiche Frau die\nHände vor den Mund.\n",
+        "\"Wie schrecklich!\"\n",
+        "Wie ein argloser Fisch hat sie den Köder\ngebissen. Du solltest dich glücklich schätzen.\nWürde es hierbei nur um dein Leben und nicht\num ihren Tod gehen.\n",
+        "\"Meinen Freund hat es viel schlimmer getroffen!\"\nFreund. Hunter so zu nennen, treibt dir Galle in\nden Rachen. Doch so kurz vor dem Ziel kannst\ndu deine Maske nicht einfach so fallen lassen.\n\"Er ist verletzt und kann sich nicht bewegen. Ich\nbin losgezogen, um Hilfe zu suchen-\"\n",
+        "Sie lässt dich dein Schauspiel nicht zu Ende\nbringen. Inmitten deiner Erzählung stürmt sie los,\num notdürftiges Verbandszeug aus einem der\nZelte zu kramen.\n",
+        "\"Dann dürfen wir keine Zeit verlieren!\" Sie stellte\nkeine weiteren Fragen. Darüber wer du bist. Was\ndu hier tust. Oder ob du ein gottverdammter\nLügner bist, dem man keinen Herzschlag lang\nüber den Weg trauen sollte.\n",
+        "Hättest du alles stehen und liegen lassen, wenn\ndich ein Fremder um Hilfe gebeten hätte?\n",
+        "\"Schnell. Führe mich zu ihm - vielleicht können\nwir ihn noch retten!\"\n",
+        "Wenn sie wüsste. Dass sie sich mehr darum\nsorgen sollte, ob sie selbst noch zu retten ist.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "hinterhalt",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "warnen",
+      "nodeText": [
+        "Du weißt, dass du ein gefährliches Spiel\nanzettelst ... Doch dieses Risiko ist es dir wert,\nwenn es bedeutet, das Richtige zu tun.\n",
+        "Mit Mühe widerstehst du dem Drang, einen Blick\nzurück über die Schulter zu werfen. Um\nsicherzugehen, dass Hunter für einen Augenblick\nwegsieht. Wahrscheinlicher wäre, dass er dir\ndabei von den Schweißtropfen auf deiner Stirn\nabliest, dass du kurz davor bist, \"schwach\" zu\nwerden.\n",
+        "Somit hältst du deinen Kopf stur geradeaus.\nBezeugst, wie die Fragezeichen in den Augen\ndeines Gegenübers mit dem fortwährenden\nSchweigen zwischen euch weiter wachsen.\n",
+        "\"Kann ich dir irgendwie ... helfen?\" In ihrer\nStimme liegt die Unschuld eines Lammes,\nwelches du unmöglich an den Pfeil des Jägers\nverlieren kannst.\n",
+        "\"Ich ... deine Stiefmutter hat einen Jäger\nbeauftragt, dich zu töten\", flüsterst du, während\ndu hoffst, nicht gleich von Hunters Strafschuss\ndurchbohrt zu werden, \"Ich soll dich in den Wald\nlocken, damit er dich unbemerkt beseitigen kann.\"\n",
+        "Schneewittchen unterdrückt einen überraschten\nLaut, welcher deinen Warnversuch entlarven\nkönnte, ehe sie wissend nickt. Dass sie deine\nWorte keine Sekunde lang bezweifelt, lässt dich\ndiese Familiendynamik umso mehr hinterfragen.\n",
+        "Mit einem strahlenden lächeln, welches selbst\nden Jäger aus der Ferne in die Knie zwingen\nkönnte, packt sie deine Hände, bevor sie dich in\nRichtung Wald lotst. Ihr würdet einfach weiter\nHunters Spiel spielen, ohne ihn wissen zu lassen,\ndass sich die Regeln geändert haben.\n",
+        "\"Dann lass uns deinen Freund suchen und ihm\nhelfen, bevor seine Verletzung schlimmer wird\",\nsäuselt sie laut genug, auf dass Hunter sie hören\nsollte.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "kein_hinterhalt",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "hinterhalt",
+      "nodeText": [
+        "Ihre Hand liegt warm in deiner, als ihr fortwährend\ntiefer in den Wald hinein stolpert. Du bist dir\nsicher, Hunter lauert nicht unweit von euch\nzwischen den dichten Bäumen und massiven\nBaumstämmen.\n",
+        "Deine Schritte werden langsamer, als ihr euch\neiner Lichtung nähert, welche deinem \"Gefährten\"\neine günstige Schussbahn bieten könnte.\nInsbesondere im Hinblick darauf, dass\nSchneewittchen mit dem Rücken zu dir in die\nFerne sieht.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": "Du könntest sie immer noch warnen. Sie\n   müsste nicht sterben nur, weil irgendeine\n   Königin das in ihren Brief gekritzelt hat.",
+          "requiredItemId": null,
+          "targetNodeId": "gewarnt",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Das Taschenmesser ruht immer noch in\n   deiner Tasche. Du kannst sie auch einfach\n   selbst erledigen. Warum Hunter den ganzen\n   Spaß überlassen?",
+          "requiredItemId": null,
+          "targetNodeId": "selbst_toeten",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Du hast sie in den Wald gelockt. Jetzt\n   musst du nur noch abwarten, dass Hunter\n   sein Ding durchzieht ...",
+          "requiredItemId": null,
+          "targetNodeId": "hunter_toetet",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "kein_hinterhalt",
+      "nodeText": [
+        "Ihre Hand liegt warm in deiner, als ihr fortwährend\ntiefer in den Wald hinein stolpert. Du bist dir\nsicher, Hunter lauert nicht unweit von euch\nzwischen den dichten Bäumen und massiven\nBaumstämmen.\n",
+        "Deine Schritte werden langsamer, als ihr euch\neiner Lichtung nähert, welche deinem \"Gefährten\"\neine günstige Schussbahn bieten könnte.\nInsbesondere im Hinblick darauf, dass\nSchneewittchen mit dem Rücken zu dir in die\nFerne sieht.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "gewarnt",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "gewarnt",
+      "nodeText": [
+        "Mit einem breiten Lächeln auf den blutroten\nLippen, dreht sich das Mädchen zu dir um. Doch\ndein Blick wandert an ihr vorbei. Um das Funkeln\neinzufangen, was dort aufblitzt, wo die Sonne auf\nHunters Pfeil trifft.\n",
+        "Du willst sie warnen; doch sie kommt dir zuvor,\nindem sie ihre linke Hand an den Mund hebt und\nzwischen ihren Fingern ein in den Ohren\nschrillendes Pfeifen ausstößt.\n",
+        "Mit einem Tempo, wie du es kaum greifen kannst,\nstürmen auf einmal sieben Trolle aus den\nBüschen hervor. In ihren Händen führen sie\ngroße, schwere Knüppel, welche zum Teil mit\nfingerdicken Nägeln gespickt sind.\n",
+        "Hunter bleibt kaum Zeit, um aufzuschreien, ehe\nsie ihn aus nächster Nähe mit ihrer Blutlust\nvertraut machen.\n",
+        "Vielleicht sollte es dich trösten, dass seine bis ins\nMark reichenden Schmerzenslaute schnell\nzwischen den dumpfen Schlägen verstummen,\nwelche ihn fortwährend in einen Brei aus\nKnochensplittern und Eingeweide verwandeln.\nStattdessen hinterfragst du, ob Traumatherapie\nausreichen würde, um das, was du soeben\nbetrachten musstest, wieder aus dem Kopf zu\nbekommen.\n",
+        "Als die Trolle von dem Matschhaufen ablassen,\nwelcher sich nur noch mit viel Fantasie als\n\"Leiche\" identifizieren lässt, musst du jedoch mit\nUnglaube feststellen, dass Hunters Herz die rote\nPfütze vollkommen unversehrt wie eine Kirsche\nein blutiges Sahnehäubchen ziert.\n",
+        "Du blinzelst einige Male, ehe du deinen Blick\nzurück zu Schneewittchen wendest, welche\nimmer noch unschuldig lächelnd ihre Hände\nhinter dem Rücken verschränkt.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "hunter_tot",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "selbst_toeten",
+      "nodeText": [
+        "Deine dominante Hand umschlingt das\nTaschenmesser wie einen rettenden Anker. Es ist\nan der Zeit, dieses Schauspiel mit einem\nangemessenen Höhepunkt zum Abschluss zu\nbringen.\n",
+        "Du fährst die Klinge aus; bereit, dir mit ihrer Hilfe\nden Pfad zurück nach Hause zu ebnen. Sicher\nwürde dich diese Hexe Grimhilde mit einem\nZauber belohnen, welcher dich in deine Welt\nzurückführt. Wenn sie mit einem magischen\nSpiegel sprechen kann, sollte auch das keine\nSchwierigkeit für sie darstellen.\n",
+        "Deine Augen springen zu Hunter, welchen du\nhinter einem der Bäume entdeckst. Er macht sich\nfür den Schuss bereit. Zu dumm, dass du\nschneller sein wirst als er. Möge es ihn daran\nerinnern, dass er deine Fähigkeiten nicht zu\nunterschätzen hat.\n",
+        "Während dir Schneewittchen im vollen Vertrauen\nnoch immer den Rücken kehrt, hebst du deine\nHand, wie du es oft genug in Filmen studiert hast,\num deine Klinge mit einem gezielten Ruck\nzwischen ihren Rippen zu versenken. Dort, wo es\nihre Lunge zerreißt, um jeden Anflug eines\nAufschreis zu ersticken.\n",
+        "(Weiter gehen wir an dieser Stelle nicht ins\nDetail, um deine Akte nicht noch mehr zu\nbelasten.)\n",
+        "Nach getaner Arbeit schlägt sich Hunter zu dir\ndurch die Büsche. Die beeindruckte Miene auf\nseinem Gesicht kommt einem regelrechten\nSchulterklopfer gleich.\n",
+        "\"Saubere Leistung. So eine präzise\nMesserführung hätte ich dir gar nicht zugetraut.\nGanz zu schweigen davon, dass du mir doch\nglatt die Show gestohlen hast.\"\n",
+        "Mit einem amüsierten Grinsen schüttelt er den\nKopf, ehe er sich daran macht, der toten\nPrinzessin das Herz aus der Brust zu schneiden.\n",
+        "\"So. Damit können wir uns guten Gewissens vor\nunserer Königin stehen lassen.\"\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "schneewittchen_tot",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "hunter_toetet",
+      "nodeText": [
+        "Deine Augen treffen die von Hunter, welcher\nhinter einem der Bäume Deckung sucht. Sein\nBogen ist gespannt; die Pfeilspitze glitzert im\nLicht der untergehenden Sonne.\n",
+        "Dein Magen verkrampft sich bei dem Gedanken,\ntatenlos zuzusehen. Den Mord geschehen zu\nlassen. Ganz gleich, ob Schneewittchen eine\nSchuld an ihrem Ende trifft oder nicht - du wolltest\nnie ein Teil ihrer Hinrichtung sein.\n",
+        "Wenn du einfach deine Augen schließt, musst du\nes zumindest nicht mit ansehen. Doch das\nGeräusch des Pfeils, welcher sein Ziel\ndurchbohrt, lässt sich nicht verdrängen.\n",
+        "Du hörst ein ersticktes Gurgeln. Mit Sicherheit\nkannst du sagen: Hunters sauberer Treffer hatte\nSchneewittchens Hals im Visier.\n",
+        "Es folgt der Laut einer Klinge, welche sich durch\nFleisch sägt. Dir gelingt es erst, die Augen wieder\nzu öffnen, als die Hinweise auf Gräueltaten\nverstummen.\n",
+        "Hunter quittiert deine Feigheit mit einem\nmissfälligen Schnauben. \"Angsthase\", grummelt\ner, während er langsam das Herz der Prinzessin\nzwischen seinen Fingern dreht.\n",
+        "\"Kehren wir zur Königin zurück, bevor du mir\nnoch in Ohnmacht fällst.\"\n",
+        "Mit dem gesenkten Kopf eines getretenen Hundes\nfolgst du ihm aus dem Wald heraus, ohne noch\neinen letzten Blick zurück zu werfen.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "schneewittchen_tot",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "schneewittchen_tot",
+      "nodeText": [
+        "Königin Grimhilde empfängt euch in einem\nThronsaal, von dessen Ausmaß die Sporthalle\nder Werner-von-Siemens-Schule nur träumen\nkann. Die marmornen Säulen und vergoldeten\nKronleuchter sollten dich vor Ehrfurcht\nerschaudern lassen. Doch wenn du ehrlich bist,\ngibt es nach diesem Tag nichts, was du mehr\nbegehren könntest als dein eigenes Bett.\n",
+        "Du nimmst Grimhilde in Augenschein, deren\nTriumphlächeln von einem Ohr bis zum anderen\nreicht, während du dir im Stillen zugestehst:\n",
+        "Sie müsste deutlich mehr als ihre eigene\nStieftochter töten, um die Schönste im ganzen\nLand zu sein. Es sei denn, die restlichen\nBewohner kämen den Trollen gleich.\n",
+        "Hunter hingegen blüht unter ihren giftgrünen\nAugen förmlich auf.\n",
+        "\"Cringe\", denkst du dir, als er sich eilig auf die\nKnie fallen lässt, um ihr voller Stolz das verlangte\nHerz darzubringen.\n",
+        "\"Für Euch, meine Königin. Schneewittchen wird\nEuch nicht länger eine Bürde sein.\"\n",
+        "Warum doch gleich hattest du ihn begleiten\nsollen? Statt deine Unterstützung gegenüber\nGrimhilde zu erwähnen, musst du ihm nun als\nunfreiwilliger Beistand während seiner\n(ehrlicherweise etwas traurigen) \"Liebeserklärung\"\nbeiwohnen.\n",
+        "\"Ausgezeichnet. Und wie ich sehe, hast du dir\nsogar einen dienlichen Knecht für dieses\nUnterfangen zu eigen gemacht.\"\n",
+        "SO würdest du das nicht bezeichnen - doch\nGrimhildes Blick lässt dich verstummen, während\nsie dich von oben bis unten einer aufmerksamen\nMusterung unterzieht. Ein seichtes Lächeln hält\nauf ihren Lippen Einzug. Selbst deine dürftige\nMenschenkenntnis reicht aus, um zu erahnen,\ndass dies kein gutes Zeichen ist.\n",
+        "In einer fließenden Bewegung erhebt sie sich von\nihrem Thron, um euch mit einem Wink zu bitten,\nihr zu folgen. \"Bevor ich euch mit dem Reichtum\nbelohne, wie er den Rettern unseres Landes\ngebührt, möchte ich mich auf eine persönlichere\nWeise erkenntlich zeigen.\"\n",
+        "Aus dem bezauberten Glitzern in Hunters Augen\nlässt sich unschwer lesen, wie er das Wort\n\"persönlich\" interpretiert.\n",
+        "\"Ich möchte euch dazu einladen, die ersten Äpfel\ndes Baumes mit mir zu teilen, welchen ich seit\nJahren wie ein treues Kind hüte. Seid euch\nversichert, dass ihr Geschmack unvergleichlich\nist.\"\n",
+        "Das schmälert Hunters Begeisterung etwas. Er\nmüht sich darum, seine Enttäuschung für sich zu\nbehalten - doch ihm blinkt förmlich in\nLeuchtreklame auf der Stirn, dass er sich etwas\nanderes erhofft hatte.\n",
+        "In einem kleinen Nebenraum angekommen,\nserviert Grimhilde drei Äpfel auf goldenen\nTellerchen, welche euch bereits auf einem\nrunden Tischchen erwarten, ehe sie sich auf\neinen der Stühle sinken lässt.\n",
+        "Hunter und du nehmen ebenfalls Platz, während\ndu deinen Apfel nur argwöhnisch beäugst. Er ist\nrubinrot. Trollfaustgroß. Ohne einen erkennbaren\nMakel. Doch du wirst den Eindruck nicht los,\ndass diese Belohnung irgendwie seltsam ist ...\n"
+      ],
+      "choices": [
+        {
+          "choiceText": "Du solltest deine Paranoia in den Griff\n   bekommen und einfach diesen Apfel essen.\n   Wenn dich Grimhilde töten wollte, hätte sie\n   das schon längst getan.",
+          "requiredItemId": null,
+          "targetNodeId": "apfel_essen",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "\"Äh ... Ich habe wirklich keinen Hunger. Aber\n   ich nehme ihn gerne mit!\" Du lehnst das\n   Angebot dankend ab. Zumindest kann man\n   dir so nicht unterstellen, unhöflich zu sein.",
+          "requiredItemId": null,
+          "targetNodeId": "apfel_mitnehmen",
+          "rewardItemId": null
+        },
+        {
+          "choiceText": "Du könntest versuchen, die anderen\n   abzulenken, um Grimhildes Apfel gegen den\n   aus deiner Tasche zu tauschen.",
+          "requiredItemId": "apfel",
+          "targetNodeId": "apfel_tauschen",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "apfel_essen",
+      "nodeText": [
+        "Die Schale ist herrlich knackig, als du deine\nZähne im Apfel der Königin versenkst. Der\nvollmundige, süße Saft flutet deine Zunge.\n",
+        "Grimhilde soll mit ihrem Versprechen recht\nbehalten: Die Frucht zwischen deinen Fingern\nschmeckt wirklich so gut wie keine andere.\n",
+        "Wenngleich du den Eindruck nicht los wirst, dass\ndort noch etwas anderes ist, was deinen Gaumen\nkitzelt. Doch das ist sicher nur Einbildung, ...\noder?\n",
+        "Neben dir ertönt ein dumpfes Geräusch, als\nHunter mit dem Gesicht voran auf die Tischplatte\nkracht.\n",
+        "Hastig tasten deine Augen seinen Körper auf\nweitere Regungen ab. Nach einem Beweis, dass\ner noch atmet. Wahrscheinlich nur schläft. Doch\ndort ist nichts.\n",
+        "Ehe du einen weiteren klaren Gedanken darüber\nfassen kannst, was hier vor sich geht, holt dich\ndie Schwärze ein.\n",
+        "Wärst du doch nur bei deiner Tante am Tisch\nsitzengeblieben.\n",
+        "GAME OVER"
+      ],
+      "choices": []
+    },
+    {
+      "nodeId": "apfel_mitnehmen",
+      "nodeText": [
+        "\"Ich bestehe darauf\", erwidert die Königin in\neinem dringlichen Tonfall. Dort ist etwas in ihren\nAugen, was dir deutlich macht, es könnte\nSchlimmeres passieren, solltest du ihrer Bitte\nnicht Folge leisten.\n",
+        "Du schluckst deinen Unmut wie einen schweren\nKloß im Hals herunter, ehe du zögernd in den\nApfel beißt.\n",
+        "Die Schale ist herrlich knackig, als du deine\nZähne im Apfel der Königin versenkst. Der\nvollmundige, süße Saft flutet deine Zunge.\n",
+        "Grimhilde soll mit ihrem Versprechen recht\nbehalten: Die Frucht zwischen deinen Fingern\nschmeckt wirklich so gut wie keine andere.\n",
+        "Wenngleich du den Eindruck nicht los wirst, dass\ndort noch etwas anderes ist, was deinen Gaumen\nkitzelt. Doch das ist sicher nur Einbildung, ...\noder?\n",
+        "Neben dir ertönt ein dumpfes Geräusch, als\nHunter mit dem Gesicht voran auf die Tischplatte\nkracht.\n",
+        "Hastig tasten deine Augen seinen Körper auf\nweitere Regungen ab. Nach einem Beweis, dass\ner noch atmet. Wahrscheinlich nur schläft. Doch\ndort ist nichts.\n",
+        "Ehe du einen weiteren klaren Gedanken darüber\nfassen kannst, was hier vor sich geht, holt dich\ndie Schwärze ein.\n",
+        "Wärst du doch nur bei deiner Tante am Tisch\nsitzengeblieben.\n",
+        "GAME OVER"
+      ],
+      "choices": []
+    },
+    {
+      "nodeId": "apfel_tauschen",
+      "nodeText": [
+        "\"Wow, in dem Spiegel hinter Euch kommt Ihr\nwirklich fantastisch zur Geltung!\", wirfst du den\nerstbesten verzweifelten Versuch in den Raum,\ndein Gegenüber von dir abzulenken.\n",
+        "Für die Königin scheint es auszureichen, da sie\nhastig den Blick zurück über die Schulter wirft.\nDas kann doch nicht wirklich so einfach gewesen\nsein?\n",
+        "Selbst Hunter folgt dem Ruf, um seiner liebsten\nHerrscherin sogleich erneut zu demonstrieren,\ndass er eine gewaltige Schleimspur auf Lager\nhat.\n",
+        "Schnell tauschst du den Apfel auf deinem\nTellerchen gegen das Duplikat aus deiner Tasche\naus, welches du noch eine Weile zuvor im Wald\ngefunden hast. Lieber versenkst du deine Zähne\nin etwas Angeknabbertes, was eine Weile auf\ndem Boden lag, statt in einen vergifteten Apfel zu\nbeißen.\n",
+        "Neben dir ertönt ein dumpfes Geräusch, als\nHunter mit dem Gesicht voran auf die Tischplatte\nkracht.\n",
+        "Hastig tasten deine Augen seinen Körper auf\nweitere Regungen ab. Nach einem Beweis, dass\ner noch atmet. Wahrscheinlich nur schläft. Doch\ndort ist nichts.\n",
+        "Das siegessichere Lächeln der Königin wandelt\nsich jedoch recht schnell zu einem Ausdruck der\nUngläubigkeit, als sie bezeugen muss, dass du\nHunters Beispiel nicht folgst.\n",
+        "Mann, bist du froh, diesen verdammten Apfel\ngefunden zu haben.\n",
+        "\"Äußerst gerissen ...\", erneut kräuseln sich\nGrimhildes Lippen zu einem mockanten Grinsen.\n\"Eigentlich wollte ich unliebsame Zeugen\nlangfristig beseitigen ... Doch ich kann nicht\nleugnen, dass ich eine kleine Schwäche für\ntrickreiche Seelen habe.\"\n",
+        "Sie vollführt eine kryptische Handbewegung, ehe\nsich eine altertümliche Schriftrolle zwischen ihren\nFingern manifestiert.\n",
+        "\"Einigen wir uns darauf, dass du dein Schweigen\nauch dann noch wahrst, wenn ich dir im\nGegenzug das hier gebe.\"\n",
+        "Zu deiner Überraschung überreicht sie dir eine\nmagische Formel, welche dazu in der Lage ist,\ndich zurück in deine eigene Welt zu bringen.\n",
+        "Du schluckst den Impuls herunter, ihr zu erklären,\ndass dir diesen Irrsinn zuhause ohnehin niemand\nglauben würde. Einmal davon abgesehen, dass\nes auch in deinem Interesse liegt, nicht von der\nheimatlichen Justiz für einen Mord haftbar\ngemacht zu werden.\n",
+        "Stattdessen fackelst du nicht lange und aktivierst\nden Teleport, ehe sie es sich anders überlegen\nkann.\n",
+        "Gleißendes Licht umhüllt dich, bevor die Welt um\ndich herum verschwindet.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "gutes_ende",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "hunter_tot",
+      "nodeText": [
+        "Du willst alles vergessen, was du gesehen hast,\nwährend du Schneewittchen zurück ins Lager\nfolgst. Unter günstigeren Umständen würde dich\nihr heiteres Summen vielleicht anstecken. Doch\nin diesem Fall hilft es dir höchstens dabei, das\nWissen zu verdrängen, wovon die Trolle, die ihr\nhinter euch zurücklasst, den Waldboden ...\nsäubern.\n",
+        "Du kannst verstehen, dass sie sich darüber freut,\ndem Tod von der Schippe gesprungen zu sein.\nDoch für deinen Geschmack erheitert sie das\nsoeben stattgefundene Gemetzel ein bisschen\nZU sehr.\n",
+        "Zurück im Lager angekommen, bittet sie dich\ndarum, einen Moment zu warten, während sie in\neines der umstehenden Zelte schlüpft.\n",
+        "Den stillen Raum, den sie dir damit bietet, nutzt\ndu zu deinem Leidwesen dafür aus, um doch\nnoch die letzten Geschehnisse zu hinterfragen.\n",
+        "Du hattest Hunter nie bei dem Mord an der\nPrinzessin unterstützen wollen. Dennoch fühlst\ndu dich mit ihrer Rettung schuldig für den Tod\neiner anderen Person.\n",
+        "Ein Leben für ein Leben. Was für eine dreckige\nAngelegenheit.\n",
+        "Schneewittchen krabbelt wieder aus einem der\nZelte hervor und drückt dir eine alt anmutende\nSchriftrolle in die Hand: \"Damit solltest du nach\nHause zurückkommen. Um den Rest werde ich\nmich kümmern.\"\n",
+        "Und ihre Trolle mit den nagelgespickten\nKnüppeln. Du bist froh, dass du nicht mehr davon\nmit ansehen musst.\n",
+        "Wenn du ehrlich bist, möchtest du nicht wissen,\nob Grimhilde oder doch deren Stieftochter das\nwahre Übel der Geschichte ist.\n",
+        "Auch sparst du dir die Frage, woher sie davon\nweiß, dass du nicht von hier stammst. Die\nAntwort könnte dir missfallen.\n",
+        "Lieber akzeptierst du ihr Geschenk.\n",
+        "Auch, wenn du nie dachtest, das einmal zu\nsagen: Das Haus deiner Tante erscheint dir mit\neinem Mal wie ein Wohlfühlort.\n",
+        "Du verabschiedest dich mit dem Rest eines\nmulmigen Gefühls im Magen, ehe du die\nSchriftrolle einsetzt. Gleißendes Licht verschluckt\ndich und zieht dich zurück in deine Heimatwelt.\n"
+      ],
+      "choices": [
+        {
+          "choiceText": null,
+          "requiredItemId": null,
+          "targetNodeId": "gutes_ende",
+          "rewardItemId": null
+        }
+      ]
+    },
+    {
+      "nodeId": "gutes_ende",
+      "nodeText": [
+        "Als du deine Augen öffnest, findest du dich im\nBad deiner Tante wieder. Nie hättest du gedacht,\ndass dich der Anblick ihrer altrosen Fliesen derart\nerleichtern könnte.\n",
+        "Vielleicht kannst du dein unfreiwilliges Abenteuer\nals bösen Traum abstempeln. Oder dich einfach\nglücklich schätzen, die richtigen Entscheidungen\ngetroffen zu haben, um zwischen diesem ganzen\nMärchenchaos am Leben zu bleiben.\n",
+        "Was auch immer. Du willst es einfach nur noch\naus deinem Kopf verbannen.\n",
+        "Mit zittrigen Fingern machst du dich auf, um dich\nvon deiner Tante zu verabschieden. Du müsstest\nnoch für LF8 lernen, erzählst du ihr. Was stimmt.\n",
+        "Doch, wenn du ehrlich bist, wirst du zuhause\neinfach nur in dein Bett fallen und darauf hoffen,\ndich erwartet eine traumlose Nacht.\n",
+        "ENDE"
+      ],
+      "choices": []
     }
   ],
   "items": [
     {
-      "name": "Test",
-      "description": "Das ist ein TestItem",
-      "id": "TestItem"
+      "name": "Taschenmesser",
+      "description": "Ein Erbstück deines Großvaters. Er wusste,\ndamit allerhand nützliche Dinge zu schnitzen.\nZumindest nützlich für seine eigene Altersgruppe.\nBesser als mit der Klinge kommst du mit dem\nintegrierten Bierflaschenöffner zurecht.",
+      "id": "taschenmesser"
+    },
+    {
+      "name": "Königin Grimhildes Brief",
+      "description": "An meinen getreuen Jäger Hunter,\n\n\nes schmerzt mein armes Mutterherz, dir\nmitteilen zu müssen:\n\nDie Tochter des Königs, welche ich\naufgezogen habe wie meine eigene, ist\nbedauerlich weit vom rechten Weg abgekommen.\n\nSie hat sich widerwertigen Trollen\nangeschlossen, welche wie die Wilden im Wald\nhausen und plant mit ihnen, mein Königreich zu\nstürzen! Und das des Königs. Unser Königreich.\nWir regieren es zusammen. Und es liegt genauso\nin seinem Interesse wie in meinem, dass dieses\nabtrünnige Kind gefasst wird. Womit ich\nselbstverständlich meine, dass diesem Mädchen\nnoch an Ort und Stelle der Prozess gemacht\nwerden soll.\n\nDas ist so und nicht anders mit dem König\nabgesprochen.\n\nDennoch würde ich dich freundlichst darum\nbitten, ihr Herz als Beweisstück ausdrücklich MIR\nauszuliefern. Er würde den Anblick nur schwer\nverkraften.\n\nIn mir wohnt die tiefste Dankbarkeit für\ndeinen edlen Dienst, unser Königreich von dieser\nVerräterin zu retten.\n\n\nHochachtungsvoll\n\nKönigin Grimhilde",
+      "id": "brief"
+    },
+    {
+      "name": "Halsverletzung",
+      "description": "Du kannst sie zwar nicht sehen - doch, wann\nimmer du den Kopf drehst, um dich umzusehen,\nzuckt Schmerz in deiner Halsgegend auf.\nWahrscheinlich ist es nur ein kleiner Kratzer.\nHoffst du. Die tun doch immer am meisten weh.",
+      "id": "halsverletzung"
+    },
+    {
+      "name": "Angeknabberter Apfel",
+      "description": "Ein rubinroter Apfel mit knackiger Schale.\nSo einen Hübschen hast du noch nie im\nSupermarkt gesehen. Wenn man nicht weiß, dass\ner von einer Riesenspinne angeknabbert wurde,\nfällt der kleine Makel kaum ins Auge.",
+      "id": "apfel"
     }
   ]
 }

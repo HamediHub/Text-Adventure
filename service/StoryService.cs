@@ -30,12 +30,12 @@ namespace CreateYourOwnAdventure.service
             Choice selectedChoice = null;
             if (possibleChoices.Count <= 0)
             {
-                OutputHelper.PrintLineNoReadKey("Ende");
-                Environment.Exit(0);
+                player.CurrentNode = null;
                 return;
             }
             else if (possibleChoices.Count == 1) {
-                OutputHelper.PrintLine("[weiter]");
+                OutputHelper.Print("[weiter]");
+                Console.ReadKey(true);
 
                 selectedChoice = possibleChoices[0];
             }
@@ -45,14 +45,7 @@ namespace CreateYourOwnAdventure.service
                 foreach (Choice choice in possibleChoices)
                 {
                     count++;
-                    OutputHelper.Print(count + ": " + choice.ChoiceText.Replace("[PlayerName]", player.Name));
-
-                    if (choice.RequiredItemId != null)
-                    {
-                        OutputHelper.Print(" (uses " + StoryHelper.GetItem(choice.RequiredItemId).Name + ")");
-                    }
-
-                    OutputHelper.PrintLineNoReadKey("");
+                    OutputHelper.Print(count + ": " + choice.ChoiceText.Replace("[PlayerName]", player.Name) + "\n");
                 }
                 OutputHelper.PrintLineNoReadKey(++count + ": Menü");
 
@@ -71,14 +64,21 @@ namespace CreateYourOwnAdventure.service
 
             if (selectedChoice.RewardItemId != null)
             {
+                Console.Clear();
                 OutputHelper.Print("Du erhältst ");
                 OutputHelper.ColorPrint(StoryHelper.GetItem(selectedChoice.RewardItemId).Name, ConsoleColor.DarkGreen);
                 OutputHelper.PrintLine(".");
                 player.Inventory.Add(selectedChoice.RewardItemId);
+
+                if (selectedChoice.RewardItemId == "brief")
+                {
+                    lookAtItem(player, StoryHelper.GetItem(selectedChoice.RewardItemId));
+                }
             }
 
-            if (selectedChoice.RequiredItemId != null)
+            if (selectedChoice.RequiredItemId != null && selectedChoice.RequiredItemId != "halsverletzung")
             {
+                Console.Clear();
                 OutputHelper.Print("Du verlierst ");
                 OutputHelper.ColorPrint(StoryHelper.GetItem(selectedChoice.RequiredItemId).Name, ConsoleColor.DarkRed);
                 OutputHelper.PrintLine(".");
@@ -110,7 +110,7 @@ namespace CreateYourOwnAdventure.service
 
             if (count == 0)
             {
-                OutputHelper.PrintLine("Ihr Inventar ist leer.");
+                OutputHelper.PrintLine("Dein Inventar ist leer.");
                 return;
             }
             int input = InputHelper.GetIntInput(1, count);
@@ -124,12 +124,13 @@ namespace CreateYourOwnAdventure.service
             OutputHelper.ColorPrintLineNoReadKey(item.Name, ConsoleColor.Green);
             OutputHelper.PrintLineNoReadKey(item.Description);
             OutputHelper.PrintLineNoReadKey("");
-            OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
+            OutputHelper.Print("Drücke eine beliebige Taste, um fortzufahren...");
+            Console.ReadKey(true);
 
             Console.Clear();
-            OutputHelper.PrintLineNoReadKey("Wie möchten Sie fortfahren?");
+            OutputHelper.PrintLineNoReadKey("Wie möchtest du fortfahren?");
             OutputHelper.PrintLineNoReadKey("1: Weiter");
-            OutputHelper.PrintLineNoReadKey("2: Zurück");
+            OutputHelper.PrintLineNoReadKey("2: Inventar");
 
             int input = InputHelper.GetIntInput(1, 2);
             if (input == 2)
@@ -171,7 +172,7 @@ namespace CreateYourOwnAdventure.service
         private void Menu(Player player)
         {
             Console.Clear();
-            OutputHelper.PrintLineNoReadKey("Was möchten Sie tun?");
+            OutputHelper.PrintLineNoReadKey("Was möchtest du tun?");
             OutputHelper.PrintLineNoReadKey("1: Spiel fortsetzen");
             OutputHelper.PrintLineNoReadKey("2: Inventar anschauen");
             OutputHelper.PrintLineNoReadKey("3: Spiel beenden");

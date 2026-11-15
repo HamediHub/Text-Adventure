@@ -22,7 +22,7 @@ namespace CreateYourOwnAdventure.service
 
         public Player CreateNewPlayer()
         {
-            OutputHelper.PrintLineNoReadKey("Erstellen Sie einen neuen Spieler.");
+            OutputHelper.PrintLineNoReadKey("Erstelle einen neuen Spieler.");
             OutputHelper.Print("Name: ");
 
             string playerName = InputHelper.GetNameInput();
@@ -39,18 +39,20 @@ namespace CreateYourOwnAdventure.service
             }
             
             Player newPlayer = new Player(playerName, newUniqueId);
+            newPlayer.Inventory.Add("taschenmesser");
 
             Console.Clear();
             OutputHelper.ColorPrint(newPlayer.Name, ConsoleColor.Blue);
             OutputHelper.PrintLineNoReadKey(" wurde erfolgreich erstellt.");
-            OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
+            OutputHelper.Print("Drücke eine beliebige Taste, um fortzufahren...");
+            Console.ReadKey(true);
 
             return newPlayer;
         }
 
         public Player SelectPlayer()
         {
-            OutputHelper.PrintLineNoReadKey("Wählen Sie einen Spieler");
+            OutputHelper.PrintLineNoReadKey("Wähle einen Spieler");
             List<Player> players = GetPlayers();
 
             int count = 0;
@@ -67,7 +69,8 @@ namespace CreateYourOwnAdventure.service
             Console.Clear();
             OutputHelper.ColorPrint(selectedPlayer.Name, ConsoleColor.Blue);
             OutputHelper.PrintLineNoReadKey(" wurde erfolgreich ausgewählt.");
-            OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
+            OutputHelper.Print("Drücke eine beliebige Taste, um fortzufahren...");
+            Console.ReadKey(true);
 
             return selectedPlayer;
         }
@@ -95,7 +98,27 @@ namespace CreateYourOwnAdventure.service
             Console.Clear();
             OutputHelper.ColorPrint(player.Name, ConsoleColor.Blue);
             OutputHelper.PrintLineNoReadKey(" wurde erfolgreich gespeichert.");
-            OutputHelper.PrintLine("Drücken Sie eine beliebige Taste, um fortzufahren...");
+            OutputHelper.Print("Drücke eine beliebige Taste, um fortzufahren...");
+            Console.ReadKey(true);
+        }
+
+        public void DeletePlayer(int id)
+        {
+            List<Player> players = GetPlayers();
+            if (players == null)
+            {
+                return;
+            }
+
+            if (players.Exists(p => p.Id == id))
+            {
+                players.RemoveAll(p => p.Id == id);
+            }
+
+            string json = JsonConvert.SerializeObject(players);
+
+            string jsonPath = @"..\..\data\players.json";
+            File.WriteAllText(jsonPath, json);
         }
 
     }

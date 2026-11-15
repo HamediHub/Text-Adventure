@@ -26,6 +26,12 @@ namespace CreateYourOwnAdventure.controller
             {
                 storyService.TraverseStory(selectedPlayer);
 
+                if (selectedPlayer.CurrentNode == null)
+                {
+                    playerService.DeletePlayer(selectedPlayer.Id);
+                    return;
+                }
+
                 playerService.SavePlayer(selectedPlayer);
 
             }

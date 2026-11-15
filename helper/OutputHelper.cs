@@ -16,7 +16,7 @@ namespace CreateYourOwnAdventure.helper
         public static void PrintLine(string s)
         {
             Console.WriteLine(s);
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
 
         public static void PrintLineNoReadKey(string s)
@@ -35,7 +35,7 @@ namespace CreateYourOwnAdventure.helper
             Console.ForegroundColor = color;
             Console.WriteLine(s);
             Console.ForegroundColor = oldColor;
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
         public static void ColorPrintLineNoReadKey(string s, ConsoleColor color)
         {
