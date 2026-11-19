@@ -56,6 +56,7 @@ namespace CreateYourOwnAdventure.helper
 
             while (name == null)
             {
+                OutputHelper.Print("Name: ");
                 name = Console.ReadLine();
 
                 if (name.Length < 1)

@@ -25,8 +25,6 @@ namespace CreateYourOwnAdventure.service
             // possibleChoices ermitteln
             List<Choice> possibleChoices = GetPossibleChoices(currentNode, player);
 
-            // 
-
             Choice selectedChoice = null;
             if (possibleChoices.Count <= 0)
             {
@@ -34,7 +32,7 @@ namespace CreateYourOwnAdventure.service
                 return;
             }
             else if (possibleChoices.Count == 1) {
-                OutputHelper.Print("[weiter]");
+                OutputHelper.Print("\n[weiter]");
                 Console.ReadKey(true);
 
                 selectedChoice = possibleChoices[0];
@@ -122,8 +120,9 @@ namespace CreateYourOwnAdventure.service
         {
             Console.Clear();
             OutputHelper.ColorPrintLineNoReadKey(item.Name, ConsoleColor.Green);
-            OutputHelper.PrintLineNoReadKey(item.Description);
             OutputHelper.PrintLineNoReadKey("");
+            OutputHelper.PrintLineNoReadKey(item.Description);
+            OutputHelper.PrintLineNoReadKey("\n");
             OutputHelper.Print("Drücke eine beliebige Taste, um fortzufahren...");
             Console.ReadKey(true);
 

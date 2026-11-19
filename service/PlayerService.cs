@@ -23,8 +23,7 @@ namespace CreateYourOwnAdventure.service
         public Player CreateNewPlayer()
         {
             OutputHelper.PrintLineNoReadKey("Erstelle einen neuen Spieler.");
-            OutputHelper.Print("Name: ");
-
+            
             string playerName = InputHelper.GetNameInput();
 
             List<Player> players = GetPlayers();
@@ -59,7 +58,7 @@ namespace CreateYourOwnAdventure.service
             foreach (Player player in players)
             {
                 count++;
-                OutputHelper.PrintLineNoReadKey(count + ": " + player.Name + " (" + player.CurrentNode + ")");
+                OutputHelper.PrintLineNoReadKey(count + ": " + player.Name);
             }
 
             int input = InputHelper.GetIntInput(1, count);
